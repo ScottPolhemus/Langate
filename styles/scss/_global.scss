@@ -1,0 +1,11 @@
+a.btn{
+	padding: 15px 30px;
+	border:2px solid $lg-lightblue;
+	display:inline-block;
+	transition:.25s ease;
+
+	&:hover{
+		background-color:$lg-lightblue;
+		color:white;
+	}
+}

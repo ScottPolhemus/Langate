@@ -1,0 +1,55 @@
+h1, h2, h3, h4, h5, p, .h1, .h2, .h3, .h4, .h5, .p{
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, p, .h1, .h2, .h3, .h4, .p{
+	font-family: 'Source Sans Pro', sans-serif;
+	color:$lg-blue;
+}
+
+h1, .h1{
+	font-size:70px;
+}
+
+h2, .h2{
+	font-size:35px;
+}
+
+h1, .h1, h2, .h2{
+	font-weight:600;
+}
+
+h3, .h3{
+	font-size:30px;
+	font-weight:200;
+}
+
+h4,.h4{
+	font-size:24px;
+	font-weight:400;
+}
+
+h5, .h5{
+	font-family: 'Oswald', sans-serif;
+	text-transform:uppercase;
+	font-weight:400;
+	letter-spacing:.05em;
+}
+
+p{
+	font-size:16px;
+	line-height:1.5;
+}
+
+.blue{
+	color:$lg-blue;
+}
+
+.lite-blue{
+	color:$lg-lightblue;
+}
+
+.white{
+	color:white;
+}
