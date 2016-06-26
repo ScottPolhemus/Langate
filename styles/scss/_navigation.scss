@@ -1,0 +1,21 @@
+nav{
+	border-bottom: 1px solid grey;
+	padding:25px; 
+	text-align:center;
+	position:relative;
+
+	.logo{
+		position:absolute;
+		left:25px;
+		top:25px;
+	}
+
+	.nav-links{
+		margin:0 auto;
+
+		li{
+			display:inline-block;
+			margin:0 15px;
+		}
+	}
+}

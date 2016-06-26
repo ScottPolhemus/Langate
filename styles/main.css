@@ -90,4 +90,19 @@ p {
 
 .white {
   color: white; }
+
+nav {
+  border-bottom: 1px solid grey;
+  padding: 25px;
+  text-align: center;
+  position: relative; }
+  nav .logo {
+    position: absolute;
+    left: 25px;
+    top: 25px; }
+  nav .nav-links {
+    margin: 0 auto; }
+    nav .nav-links li {
+      display: inline-block;
+      margin: 0 15px; }
 /*# sourceMappingURL=main.css.map */
