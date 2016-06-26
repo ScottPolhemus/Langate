@@ -98,8 +98,11 @@ nav {
   position: relative; }
   nav .logo {
     position: absolute;
-    left: 25px;
-    top: 25px; }
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+    nav .logo a, nav .logo img {
+      display: block; }
   nav .nav-links {
     margin: 0 auto; }
     nav .nav-links li {
