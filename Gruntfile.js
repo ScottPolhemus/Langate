@@ -36,6 +36,15 @@ module.exports = function(grunt) {
 			// js: {
 			// 	files: ['scripts/src/**/*.js']
 			// }
+		},
+
+		connect: {
+			main: {
+				options: {
+					port: 8000,
+					base: '.'
+				}
+			}
 		}
 	});
 
@@ -45,7 +54,7 @@ module.exports = function(grunt) {
 	]);
 
 
-	grunt.registerTask('dev', ['build', 'watch']);
+	grunt.registerTask('dev', ['build', 'connect', 'watch']);
 
 	grunt.registerTask('default', ['build']);
 
