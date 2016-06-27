@@ -1,3 +1,30 @@
-/*Colors*/
+// Colors
 $lg-blue:#071744;
 $lg-lightblue:#1CA2DD;
+$grey: #BFBFBF;
+$grey1: #EBE9E9;
+$bluegrey: #838BA1;
+
+// Mixins
+@mixin center{
+	top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin center-h{
+	margin:0 auto;
+	left:0;
+	right:0;
+}
+
+@mixin background{
+	background-position:center center;
+	background-size:cover;
+}
+
+@mixin absolute-pos{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+}

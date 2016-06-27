@@ -13,7 +13,7 @@ h1, .h1{
 }
 
 h2, .h2{
-	font-size:35px;
+	font-size:34px;
 }
 
 h1, .h1, h2, .h2{
@@ -23,6 +23,7 @@ h1, .h1, h2, .h2{
 h3, .h3{
 	font-size:30px;
 	font-weight:200;
+	line-height:1.25;
 }
 
 h4,.h4{
@@ -32,9 +33,10 @@ h4,.h4{
 
 h5, .h5{
 	font-family: 'Oswald', sans-serif;
+	font-size:15px;
 	text-transform:uppercase;
 	font-weight:400;
-	letter-spacing:.05em;
+	letter-spacing:.1em;
 }
 
 p{
@@ -46,10 +48,14 @@ p{
 	color:$lg-blue;
 }
 
-.lite-blue{
+.lightblue{
 	color:$lg-lightblue;
 }
 
 .white{
 	color:white;
+}
+
+.bluegrey{
+	color:$bluegrey;
 }

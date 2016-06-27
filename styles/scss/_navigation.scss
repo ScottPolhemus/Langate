@@ -1,30 +1,43 @@
 nav{
-	border-bottom: 1px solid grey;
+	border-bottom: 1px solid $grey;
 	padding:25px; 
 	text-align:center;
-	position:relative;
+	position:fixed;
+	top: 0;
+    left: 0;
+    right: 0;
+    z-index:100;
+    background:white;
 
 	.logo{
 		position:absolute;
-		top:50%;
-		transform: translateY(-50%);
+    	@include center;
 
 		a, img{
 			display:block;
 		}
 	}
 
+	a{	
+		transition:.25s ease;
+
+		&:hover{
+			opacity:.5;
+		}
+	}
+
 	.nav-links{
-		margin:0 auto;
 
 		li{
 			display:inline-block;
 			margin:0 15px;
+
 		}
 	}
 
 	.contact{
-		float:right;
-		clear:both;
+		position: absolute;
+    	right: 25px;
+    	@include center;
 	}
 }
