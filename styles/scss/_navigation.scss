@@ -1,6 +1,6 @@
 nav{
 	border-bottom: 1px solid $grey;
-	padding:25px; 
+	padding:25px 0; 
 	text-align:center;
 	position:fixed;
 	top: 0;
@@ -8,6 +8,14 @@ nav{
     right: 0;
     z-index:100;
     background:white;
+
+    .nav-wrapper{
+    	width:95%;
+    	height:100%;
+    	position:relative;
+    	margin:0 auto;
+    	display:inline-block;
+    }
 
 	.logo{
 		position:absolute;
@@ -34,10 +42,17 @@ nav{
 
 		}
 	}
+	
+    @media screen and (max-width: 1080px) {
+	    .nav-links {
+	        float: right;
+    		margin-right: 90px;
+	    }
+	}
 
 	.contact{
 		position: absolute;
-    	right: 25px;
+		right:0;
     	@include center;
 	}
 }

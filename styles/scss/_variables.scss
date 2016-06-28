@@ -5,6 +5,13 @@ $grey: #BFBFBF;
 $grey1: #EBE9E9;
 $bluegrey: #838BA1;
 
+//Breaks
+$mobile:400px;
+$premobile:649px;
+$tabportrait:768px;
+$tabland:1024px;
+
+
 // Mixins
 @mixin center{
 	top: 50%;

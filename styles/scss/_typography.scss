@@ -9,11 +9,36 @@ h1, h2, h3, h4, p, .h1, .h2, .h3, .h4, .p{
 }
 
 h1, .h1{
-	font-size:70px;
+	font-size:65px;
+
+	@media screen and (max-width: $tabland) {
+		font-size:55px;
+	}
+
+	@media screen and (max-width: $tabportrait) {
+		font-size:45px;
+	}
+
+	@media screen and (max-width: $mobile) {
+		font-size:40px;
+	}
 }
 
 h2, .h2{
 	font-size:34px;
+	line-height:1.25;
+
+	@media screen and (max-width: $tabland) {
+		font-size:32px;
+	}
+
+	@media screen and (max-width: $tabportrait) {
+		font-size:30px;
+	}
+
+	@media screen and (max-width: $mobile) {
+		font-size:26px;
+	}
 }
 
 h1, .h1, h2, .h2{
@@ -24,11 +49,27 @@ h3, .h3{
 	font-size:30px;
 	font-weight:200;
 	line-height:1.25;
+
+	@media screen and (max-width: $tabportrait) {
+		font-size:25px;
+	}
+
+	@media screen and (max-width: $mobile) {
+		font-size:21px;
+	}
 }
 
 h4,.h4{
 	font-size:24px;
 	font-weight:400;
+
+	@media screen and (max-width: $tabportrait) {
+		font-size:22px;
+	}
+
+	@media screen and (max-width: $mobile) {
+		font-size:19px;
+	}
 }
 
 h5, .h5{
@@ -37,6 +78,10 @@ h5, .h5{
 	text-transform:uppercase;
 	font-weight:400;
 	letter-spacing:.1em;
+
+	@media screen and (max-width: $mobile) {
+		font-size:14px;
+	}
 }
 
 p{
