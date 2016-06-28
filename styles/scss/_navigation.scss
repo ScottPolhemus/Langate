@@ -1,6 +1,5 @@
 nav{
 	border-bottom: 1px solid $grey;
-	padding:25px 0; 
 	text-align:center;
 	position:fixed;
 	top: 0;
@@ -28,6 +27,8 @@ nav{
 
 	a{	
 		transition:.25s ease;
+		padding:25px 15px;
+		display:inline-block;
 
 		&:hover{
 			opacity:.5;
@@ -38,11 +39,37 @@ nav{
 
 		li{
 			display:inline-block;
-			margin:0 15px;
 
+			&.has-menu{
+				position:relative;
+
+				.dropdown{
+					position: absolute;
+				    background: white;
+				    // border: 1px $lg-lightblue solid;
+				    padding: 10px 20px 10px 10px;
+				    top: 55px;
+				    text-align:left;
+				    opacity:0;
+				    transform:translateY(-200px);
+				    transition: .5s ease;
+
+				    a{
+				    	display:block;
+				    	padding:5px 0;
+				    }
+				}
+
+				&:hover{
+					.dropdown{
+						opacity:1;
+				   		transform:translateY(0);
+					}
+				}
+			}
 		}
 	}
-	
+
     @media screen and (max-width: 1080px) {
 	    .nav-links {
 	        float: right;

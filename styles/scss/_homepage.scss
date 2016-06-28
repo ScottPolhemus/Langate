@@ -147,10 +147,31 @@
 					background:$lg-lightblue;
 					height:100%;
 					position:relative;
-					transition:background .25s ease;
+					transition: background .5s ease;
+					position:relative;
+					overflow:hidden;
+
+					&:after{
+						content:'';
+						height:100%;
+						width:100%;
+						background-color:$lg-blue;
+						@include center-h;
+						position:absolute;
+						border-radius:100%;
+						opacity:0;
+						transition: .35s ease;
+						transform:scale(.5);
+					}
+
 
 					&:hover{
 						background:$lg-blue;
+
+						&:after{
+							transform:scale(1.5);
+							opacity:1;
+						}
 					}
 
 					.inner-cta{
@@ -158,6 +179,7 @@
 						position:absolute;
 						@include center;
 						@include center-h;
+						z-index:2;
 
 						img{
 							margin-top:15px;
@@ -204,6 +226,10 @@
 					&.cta{
 						height:150px;
 						width:100%;
+
+						&:after{
+							display:none;
+						}
 					}
 				}
 			}
@@ -326,12 +352,24 @@
 
 			.logomark{
 				max-width:45px;
+	    		animation:quote 3s infinite;
 			}
 
 			p{
 				margin-top:25px;
 			}
 		}
+	}
+}
+
+@keyframes quote{
+	0%, 100%{
+		transform:scale(1);
+	}
+
+	50%{
+		transform:scale(.8);
+		opacity:.5;
 	}
 }
 

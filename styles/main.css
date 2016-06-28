@@ -68,11 +68,12 @@ a.btn {
   display: inline-block;
   overflow: hidden;
   position: relative;
-  -webkit-transition: .25s ease;
-          transition: .25s ease; }
+  -webkit-transition: background .25s ease, padding .25s ease;
+          transition: background .25s ease, padding .25s ease; }
   a.btn:hover {
     background-color: #1CA2DD;
-    color: white; }
+    color: white;
+    padding: 15px 40px; }
 
 h1, h2, h3, h4, h5, p, .h1, .h2, .h3, .h4, .h5, .p {
   -webkit-font-smoothing: antialiased;
@@ -159,7 +160,6 @@ p {
 
 nav {
   border-bottom: 1px solid #BFBFBF;
-  padding: 25px 0;
   text-align: center;
   position: fixed;
   top: 0;
@@ -182,12 +182,33 @@ nav {
       display: block; }
   nav a {
     -webkit-transition: .25s ease;
-            transition: .25s ease; }
+            transition: .25s ease;
+    padding: 25px 15px;
+    display: inline-block; }
     nav a:hover {
       opacity: .5; }
   nav .nav-links li {
-    display: inline-block;
-    margin: 0 15px; }
+    display: inline-block; }
+    nav .nav-links li.has-menu {
+      position: relative; }
+      nav .nav-links li.has-menu .dropdown {
+        position: absolute;
+        background: white;
+        padding: 10px 20px 10px 10px;
+        top: 55px;
+        text-align: left;
+        opacity: 0;
+        -webkit-transform: translateY(-200px);
+                transform: translateY(-200px);
+        -webkit-transition: .5s ease;
+                transition: .5s ease; }
+        nav .nav-links li.has-menu .dropdown a {
+          display: block;
+          padding: 5px 0; }
+      nav .nav-links li.has-menu:hover .dropdown {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+                transform: translateY(0); }
   @media screen and (max-width: 1080px) {
     nav .nav-links {
       float: right;
@@ -326,10 +347,31 @@ nav {
           background: #1CA2DD;
           height: 100%;
           position: relative;
-          -webkit-transition: background .25s ease;
-                  transition: background .25s ease; }
+          -webkit-transition: background .5s ease;
+                  transition: background .5s ease;
+          position: relative;
+          overflow: hidden; }
+          .feature.news .inner-content .box.cta:after {
+            content: '';
+            height: 100%;
+            width: 100%;
+            background-color: #071744;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            position: absolute;
+            border-radius: 100%;
+            opacity: 0;
+            -webkit-transition: .35s ease;
+                    transition: .35s ease;
+            -webkit-transform: scale(0.5);
+                    transform: scale(0.5); }
           .feature.news .inner-content .box.cta:hover {
             background: #071744; }
+            .feature.news .inner-content .box.cta:hover:after {
+              -webkit-transform: scale(1.5);
+                      transform: scale(1.5);
+              opacity: 1; }
           .feature.news .inner-content .box.cta .inner-cta {
             display: inline-block;
             position: absolute;
@@ -338,7 +380,8 @@ nav {
                     transform: translateY(-50%);
             margin: 0 auto;
             left: 0;
-            right: 0; }
+            right: 0;
+            z-index: 2; }
             .feature.news .inner-content .box.cta .inner-cta img {
               margin-top: 15px;
               max-width: 30px; }
@@ -365,7 +408,9 @@ nav {
             height: 325px; }
             .feature.news .inner-content .box.cta {
               height: 150px;
-              width: 100%; } }
+              width: 100%; }
+              .feature.news .inner-content .box.cta:after {
+                display: none; } }
       @media screen and (max-width: 400px) {
         .feature.news .inner-content .left, .feature.news .inner-content .center {
           float: none; }
@@ -440,9 +485,29 @@ nav {
     margin: 0 auto;
     text-align: center; }
     .testimonial .container .quote .logomark {
-      max-width: 45px; }
+      max-width: 45px;
+      -webkit-animation: quote 3s infinite;
+              animation: quote 3s infinite; }
     .testimonial .container .quote p {
       margin-top: 25px; }
+
+@-webkit-keyframes quote {
+  0%, 100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  50% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: .5; } }
+
+@keyframes quote {
+  0%, 100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  50% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: .5; } }
 
 @-webkit-keyframes fade1 {
   0%, 100% {

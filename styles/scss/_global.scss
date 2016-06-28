@@ -18,7 +18,7 @@ a.btn{
 	display:inline-block;
 	overflow:hidden;
 	position:relative;
-	transition:.25s ease;
+	transition: background .25s ease, padding .25s ease;
 
 	// &:after{
 	// 	content:'';
@@ -37,6 +37,7 @@ a.btn{
 	&:hover{
 		background-color:$lg-lightblue;
 		color:white;
+		padding:15px 40px;
 
 		// &:after{
 		// 	top:0;
