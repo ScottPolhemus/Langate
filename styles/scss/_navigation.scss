@@ -27,8 +27,8 @@ nav{
 
 	a{	
 		transition:.25s ease;
-		padding:25px 15px;
 		display:inline-block;
+		padding:25px 0px;
 
 		&:hover{
 			opacity:.5;
@@ -39,6 +39,10 @@ nav{
 
 		li{
 			display:inline-block;
+
+			a{
+				padding:25px 15px;
+			}
 
 			&.has-menu{
 				position:relative;
@@ -67,6 +71,14 @@ nav{
 					}
 				}
 			}
+		}
+	}
+
+	@media screen and (max-width: 865px) {
+		height:70px;
+
+		.nav-links, .contact{
+			display:none;
 		}
 	}
 

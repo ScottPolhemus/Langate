@@ -183,12 +183,14 @@ nav {
   nav a {
     -webkit-transition: .25s ease;
             transition: .25s ease;
-    padding: 25px 15px;
-    display: inline-block; }
+    display: inline-block;
+    padding: 25px 0px; }
     nav a:hover {
       opacity: .5; }
   nav .nav-links li {
     display: inline-block; }
+    nav .nav-links li a {
+      padding: 25px 15px; }
     nav .nav-links li.has-menu {
       position: relative; }
       nav .nav-links li.has-menu .dropdown {
@@ -209,6 +211,11 @@ nav {
         opacity: 1;
         -webkit-transform: translateY(0);
                 transform: translateY(0); }
+  @media screen and (max-width: 865px) {
+    nav {
+      height: 70px; }
+      nav .nav-links, nav .contact {
+        display: none; } }
   @media screen and (max-width: 1080px) {
     nav .nav-links {
       float: right;
