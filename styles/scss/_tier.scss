@@ -1,0 +1,27 @@
+.hero{
+	@include background;
+	padding:5em 0;
+	// height:300px;
+	position:relative;
+
+	span{
+		content:'';
+		@include absolute-pos;
+		background-color: $lg-lightblue;
+		opacity:.75;
+		position:absolute;
+	}
+}
+
+.hero-title{
+	// @include center;
+	// @include center-h;
+	// position:absolute;
+	margin:0 auto;
+	text-align:center;
+	z-index:2;
+
+	p{
+		margin-bottom:15px;
+	}
+}

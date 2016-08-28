@@ -1,24 +1,27 @@
 html, body{
 	position: relative;
     height: 100%;
+    color:$lg-blue;
 }
 
 main{
 	position: relative;
     height: 100%;
+    padding-top:75px;
 }
 
 .padding{
 	width:93.5%;
 }
 
-a.btn{
+a.btn ,.btn{
 	padding: 15px 35px;
 	border:2px solid $lg-lightblue;
 	display:inline-block;
 	overflow:hidden;
 	position:relative;
 	transition: background .25s ease, padding .25s ease;
+	line-height:1;
 
 	// &:after{
 	// 	content:'';
