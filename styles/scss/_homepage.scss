@@ -300,14 +300,6 @@
 			}
 		}
 
-		.left{
-			float:left;
-		}
-
-		.right{
-			float:right;
-		}
-
 		@media screen and (max-width: $premobile) {
 		    .half {
 		     	width:100%;
@@ -361,6 +353,59 @@
 		}
 	}
 }
+
+.contact{
+	@include background;
+	padding:100px 0;
+}
+
+.contact-overlay{
+	background-color:white;
+	padding: 50px;
+	max-width:525px;
+	margin:0 auto;
+	text-align:center;
+
+	form{
+		input, textarea{
+		    width: 100%;
+		    padding: 10px;
+		    font-size:inherit;
+		    font-family:inherit;
+		    display:inline-block;
+		    border: 1px $grey solid;
+		    transition: .35s ease;
+
+		    &:focus{
+		    	border-color: $lg-lightblue;
+		    	outline:none;
+		    }
+
+		    ::placeholder{
+				opacity:50%;
+			}
+		}
+	}
+}
+
+.input-group{
+	padding:5px 0;
+	width:100%;
+}
+
+.input-wrapper{
+	width:50%;
+
+	&:first-child{
+		padding-right:5px;
+	}
+
+	&:last-child{
+		padding-left:5px;
+	}
+}
+ 
+// Animation Keyframes 
 
 @keyframes quote{
 	0%, 100%{

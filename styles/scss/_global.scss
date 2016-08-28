@@ -44,3 +44,27 @@ a.btn{
 		// }
 	}
 }
+
+//FLOATS
+
+.left{
+	float:left;
+}
+
+.right{
+	float:right;
+}
+
+// CLEARFIX
+
+.clear {
+  &::before,
+  &::after {
+    content:' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}

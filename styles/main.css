@@ -75,6 +75,19 @@ a.btn {
     color: white;
     padding: 15px 40px; }
 
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.clear::before, .clear::after {
+  content: ' ';
+  display: table; }
+
+.clear::after {
+  clear: both; }
+
 h1, h2, h3, h4, h5, p, .h1, .h2, .h3, .h4, .h5, .p {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -142,9 +155,11 @@ h5, .h5 {
     h5, .h5 {
       font-size: 14px; } }
 
-p {
+p, .p {
   font-size: 16px;
   line-height: 1.5; }
+  p.small, .p.small {
+    font-size: 14px; }
 
 .blue {
   color: #071744; }
@@ -460,10 +475,6 @@ nav {
       bottom: 0; }
       .feature .inner-content .line.grey {
         background: #BFBFBF; }
-    .feature .inner-content .left {
-      float: left; }
-    .feature .inner-content .right {
-      float: right; }
     @media screen and (max-width: 649px) {
       .feature .inner-content .half {
         width: 100%;
@@ -497,6 +508,49 @@ nav {
               animation: quote 3s infinite; }
     .testimonial .container .quote p {
       margin-top: 25px; }
+
+.contact {
+  background-position: center center;
+  background-size: cover;
+  padding: 100px 0; }
+
+.contact-overlay {
+  background-color: white;
+  padding: 50px;
+  max-width: 525px;
+  margin: 0 auto;
+  text-align: center; }
+  .contact-overlay form input, .contact-overlay form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: inherit;
+    font-family: inherit;
+    display: inline-block;
+    border: 1px #BFBFBF solid;
+    -webkit-transition: .35s ease;
+            transition: .35s ease; }
+    .contact-overlay form input:focus, .contact-overlay form textarea:focus {
+      border-color: #1CA2DD;
+      outline: none; }
+    .contact-overlay form input ::-webkit-input-placeholder, .contact-overlay form textarea ::-webkit-input-placeholder {
+      opacity: 50%; }
+    .contact-overlay form input ::-moz-placeholder, .contact-overlay form textarea ::-moz-placeholder {
+      opacity: 50%; }
+    .contact-overlay form input :-ms-input-placeholder, .contact-overlay form textarea :-ms-input-placeholder {
+      opacity: 50%; }
+    .contact-overlay form input ::placeholder, .contact-overlay form textarea ::placeholder {
+      opacity: 50%; }
+
+.input-group {
+  padding: 5px 0;
+  width: 100%; }
+
+.input-wrapper {
+  width: 50%; }
+  .input-wrapper:first-child {
+    padding-right: 5px; }
+  .input-wrapper:last-child {
+    padding-left: 5px; }
 
 @-webkit-keyframes quote {
   0%, 100% {
