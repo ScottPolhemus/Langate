@@ -1,18 +1,18 @@
-// Colors
+// COLORS
 $lg-blue:#071744;
 $lg-lightblue:#1CA2DD;
 $grey: #BFBFBF;
 $grey1: #EBE9E9;
 $bluegrey: #838BA1;
 
-//Breaks
+//BREAKS
 $mobile:400px;
 $premobile:649px;
 $tabportrait:768px;
 $tabland:1100px;
 
 
-// Mixins
+// MIXINS
 @mixin center{
 	top: 50%;
     transform: translateY(-50%);

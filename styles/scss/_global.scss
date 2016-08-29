@@ -14,6 +14,36 @@ main{
 	width:93.5%;
 }
 
+.width{
+	max-width:1100px;
+}
+
+.center{
+	margin:0 auto;
+}
+
+.line{
+	display:inline-block;
+	height:100%;
+	width:1px;
+	background:rgba(white, .25);
+	position:absolute;
+	@include center-h;
+	top:0;
+	bottom:0;
+
+	&.grey{
+		background:$grey;
+	}
+
+	@media screen and (max-width: $premobile) {
+		width:100%;
+    	height:1px;
+    	margin:50px 0;
+    	position:relative;
+    }
+}
+
 a.btn ,.btn{
 	padding: 15px 35px;
 	border:2px solid $lg-lightblue;
@@ -46,6 +76,24 @@ a.btn ,.btn{
 		// 	top:0;
 		// }
 	}
+}
+
+//TEXT COLOR
+
+.blue{
+	color:$lg-blue;
+}
+
+.lightblue{
+	color:$lg-lightblue;
+}
+
+.white{
+	color:white;
+}
+
+.bluegrey{
+	color:$bluegrey;
 }
 
 //FLOATS

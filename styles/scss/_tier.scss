@@ -4,24 +4,95 @@
 	// height:300px;
 	position:relative;
 
-	span{
+	&:after{
 		content:'';
 		@include absolute-pos;
-		background-color: $lg-lightblue;
 		opacity:.75;
 		position:absolute;
+		background-color:$lg-lightblue;
 	}
 }
 
 .hero-title{
-	// @include center;
-	// @include center-h;
-	// position:absolute;
-	margin:0 auto;
 	text-align:center;
 	z-index:2;
+	position:relative;
 
 	p{
 		margin-bottom:15px;
 	}
 }
+
+.page-content{
+	padding: 50px 0;
+}
+
+.page-textarea{
+	width:60%;
+	// padding-right:4em;
+
+	h1, h2, h3, p, blockquote{
+		margin-bottom:15px;
+	}
+
+	blockquote{
+		text-align: left;
+	    margin: 15px auto 30px;
+   		display: inline-block;
+    	padding-left: 1.5em;
+	}
+}
+
+.page-sidebar{
+	width:35%;
+	border-left:1px solid $grey;
+	padding-left: 4em;
+
+	a{
+		transition: .35s ease;
+		
+		&:hover{
+			color:$lg-lightblue;
+		}
+	}
+}
+
+.page-sidebar_related{
+	border-bottom:1px solid $grey;
+	padding-bottom:2em;
+	margin-bottom:2em;
+
+	li{
+		padding:2em 0 0;
+
+		.thumb{
+			width:30%;
+			position:relative;
+			border: 1px solid $grey;
+			padding-top:20%;
+			margin:5px 15px 0 0;
+
+			img{
+				width:100%;
+				position:absolute;
+				@include absolute-pos;
+			}
+		}
+
+		.project-title{
+			width:60%;
+		}
+
+		p.h5{
+			margin-bottom:5px;
+		}
+	}
+}
+
+.page-sidebar_cta{
+	.btn{
+		margin-top:15px;
+	}
+}
+
+
