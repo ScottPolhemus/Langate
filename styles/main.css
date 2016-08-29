@@ -670,10 +670,10 @@ textarea {
   width: 35%;
   border-left: 1px solid #BFBFBF;
   padding-left: 4em; }
-  .page-sidebar a {
+  .page-sidebar a.p {
     -webkit-transition: .35s ease;
             transition: .35s ease; }
-    .page-sidebar a:hover {
+    .page-sidebar a.p:hover {
       color: #1CA2DD; }
 
 .page-sidebar_related {

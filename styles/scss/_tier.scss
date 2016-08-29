@@ -48,9 +48,9 @@
 	border-left:1px solid $grey;
 	padding-left: 4em;
 
-	a{
+	a.p{
 		transition: .35s ease;
-		
+
 		&:hover{
 			color:$lg-lightblue;
 		}
