@@ -83,7 +83,6 @@
 	}
 
 	&.news{
-		background:$grey1;
 
 		.inner-content{
 			height:315px;
@@ -252,7 +251,7 @@
 		margin:5% auto;
 		overflow:auto;
 		position:relative;
-		padding:25px 0;
+		// padding:25px 0;
 
 		@media screen and (max-width: $premobile) {
 			margin:9% auto;
@@ -278,6 +277,10 @@
 
 			h3{
 				margin-bottom:15px;
+			}
+
+			.btn{
+				margin-top:25px;
 			}
 		}
 
