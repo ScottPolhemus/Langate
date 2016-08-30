@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1; }
 
-ol, ul {
+ul {
   list-style: none; }
 
 blockquote, q {
@@ -200,7 +200,7 @@ h5, .h5 {
 
 p, .p {
   font-size: 16px;
-  line-height: 1.5; }
+  line-height: 1.6; }
   p.small, .p.small {
     font-size: 14px; }
 
@@ -227,10 +227,33 @@ nav {
     nav .logo a, nav .logo img {
       display: block; }
   nav a {
-    -webkit-transition: .25s ease;
-            transition: .25s ease;
+    -webkit-transition: .35s ease;
+            transition: .35s ease;
     display: inline-block;
-    padding: 25px 0px; }
+    padding: 25px 0px;
+    position: relative; }
+    nav a.blue:after {
+      content: '';
+      background: #1CA2DD;
+      height: 4px;
+      width: 4px;
+      border-radius: 100%;
+      position: absolute;
+      left: 6px;
+      top: 51% !important;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      opacity: 0;
+      -webkit-transition: .35s ease;
+              transition: .35s ease; }
+    nav a.blue:hover {
+      opacity: 1;
+      color: #1CA2DD; }
+      nav a.blue:hover:after {
+        opacity: 1; }
+    nav a.blue.active:after {
+      opacity: 1; }
     nav a:hover {
       opacity: .5; }
   nav .nav-links li {
@@ -491,8 +514,6 @@ nav {
           max-height: 40px; }
       .feature .inner-content .half h3 {
         margin-bottom: 15px; }
-      .feature .inner-content .half p {
-        opacity: .65; }
     @media screen and (max-width: 649px) {
       .feature .inner-content .half {
         width: 100%;
@@ -654,27 +675,72 @@ textarea {
     margin-bottom: 15px; }
 
 .page-content {
-  padding: 50px 0; }
+  padding: 4em 0; }
 
 .page-textarea {
   width: 60%; }
-  .page-textarea h1, .page-textarea h2, .page-textarea h3, .page-textarea p, .page-textarea blockquote {
+  .page-textarea .image, .page-textarea hr, .page-textarea blockquote {
+    display: inline-block; }
+  .page-textarea h1, .page-textarea h2, .page-textarea h3 {
     margin-bottom: 15px; }
+  .page-textarea p {
+    margin-bottom: 25px; }
+  .page-textarea h1 a, .page-textarea h2 a, .page-textarea h3 a, .page-textarea p a {
+    border-bottom: 1px solid #1CA2DD;
+    -webkit-transition: background .35s ease;
+            transition: background .35s ease; }
+    .page-textarea h1 a:hover, .page-textarea h2 a:hover, .page-textarea h3 a:hover, .page-textarea p a:hover {
+      background-color: rgba(28, 162, 221, 0.25); }
   .page-textarea blockquote {
     text-align: left;
-    margin: 15px auto 30px;
+    margin: 5px auto 30px;
+    padding-left: 1.5em;
+    max-width: 90%; }
+  .page-textarea .image {
+    margin: 15px 0;
     display: inline-block;
-    padding-left: 1.5em; }
+    text-align: center; }
+    .page-textarea .image img {
+      width: 100%;
+      margin-bottom: 5px; }
+  .page-textarea hr {
+    border: 0;
+    height: 1px;
+    background: #BFBFBF;
+    margin: 15px 0 30px;
+    width: 100%; }
+  .page-textarea ul, .page-textarea ol {
+    margin-left: 3em;
+    margin-bottom: 35px;
+    color: #1CA2DD; }
+    .page-textarea ul p, .page-textarea ol p {
+      color: #071744;
+      margin: 0; }
+    .page-textarea ul li, .page-textarea ol li {
+      margin-bottom: 10px; }
+  .page-textarea ul {
+    list-style-type: disc; }
 
 .page-sidebar {
   width: 35%;
   border-left: 1px solid #BFBFBF;
   padding-left: 4em; }
   .page-sidebar a.p {
-    -webkit-transition: .35s ease;
-            transition: .35s ease; }
+    -webkit-transition: color .35s ease;
+            transition: color .35s ease;
+    position: relative; }
+    .page-sidebar a.p:after {
+      content: url(../images/l-arrow.svg);
+      position: absolute;
+      right: -14px;
+      bottom: -3px;
+      -webkit-transition: -webkit-transform .35s ease;
+              transition: transform .35s ease; }
     .page-sidebar a.p:hover {
       color: #1CA2DD; }
+      .page-sidebar a.p:hover:after {
+        -webkit-transform: translateX(2px);
+                transform: translateX(2px); }
 
 .page-sidebar_related {
   border-bottom: 1px solid #BFBFBF;
@@ -686,7 +752,7 @@ textarea {
       width: 30%;
       position: relative;
       border: 1px solid #BFBFBF;
-      padding-top: 20%;
+      padding-top: 18%;
       margin: 5px 15px 0 0; }
       .page-sidebar_related li .thumb img {
         width: 100%;

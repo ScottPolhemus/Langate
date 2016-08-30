@@ -27,9 +27,43 @@ nav{
 	}
 
 	a{	
-		transition:.25s ease;
+		transition:.35s ease;
 		display:inline-block;
 		padding:25px 0px;
+		position:relative;
+
+		&.blue{
+			&:after{
+				content: '';
+			    background: #1CA2DD;
+			    height: 4px;
+			    width: 4px;
+			    border-radius: 100%;
+			    position: absolute;
+			    left: 6px;
+	    		top: 51% !important;
+			    @include center;
+			    opacity:0;
+			    transition:.35s ease;
+			    // transform:transformY(-50%) translateX(5px);
+			}
+
+			&:hover{
+				opacity:1;
+				color: $lg-lightblue;
+
+				&:after{
+					opacity:1;
+					// transform:translateX(0);
+				}
+			}
+
+			&.active{
+				&:after{
+					opacity:1;
+				}
+			}
+		}
 
 		&:hover{
 			opacity:.5;
