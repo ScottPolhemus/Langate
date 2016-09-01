@@ -220,7 +220,7 @@
 		&:after{
 			content:url(../images/l-arrow.svg);
 			position:absolute;
-			left: -12px;
+			left: 0;
 			bottom: 3px;
 			top:0;
 			transition:.35s ease;
@@ -228,11 +228,11 @@
 		}
 
 		&:hover{
-			margin-left:10px;
+			transform: translateX(15px);
 
 			&:after{
 				opacity:1;
-
+				transform: translateX(-15px);
 			}
 		}
 	}

@@ -836,16 +836,19 @@ textarea {
   .linkgroup-list a:after {
     content: url(../images/l-arrow.svg);
     position: absolute;
-    left: -12px;
+    left: 0;
     bottom: 3px;
     top: 0;
     -webkit-transition: .35s ease;
             transition: .35s ease;
     opacity: 0; }
   .linkgroup-list a:hover {
-    margin-left: 10px; }
+    -webkit-transform: translateX(15px);
+            transform: translateX(15px); }
     .linkgroup-list a:hover:after {
-      opacity: 1; }
+      opacity: 1;
+      -webkit-transform: translateX(-15px);
+              transform: translateX(-15px); }
 
 .breadcrumbs {
   padding-bottom: 20px; }
