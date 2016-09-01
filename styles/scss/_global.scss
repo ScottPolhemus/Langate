@@ -106,8 +106,16 @@ a.btn ,.btn{
 	border:solid;
 	border-color: $grey;
 
-	&.top{
+	&.b-top{
 		border-width: 1px 0 0 0;
+	}
+
+	&.b-left{
+		border-width:0 0 0 1px;
+	}
+
+	&.b-bottom{
+		border-width:0 0 1px 0;
 	}
 }
 

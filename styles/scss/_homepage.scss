@@ -68,7 +68,7 @@
 .feature{
 	text-align:center;
 	overflow:auto;
-	padding:5% 0;
+	padding:4em 0;
 
 	@media screen and (max-width:$premobile){
 		padding: 10% 0;
@@ -88,7 +88,7 @@
 			height:315px;
 			// display: table;
 			// width:100%;
-			margin:4% auto;
+			margin:3em auto;
 			padding:0;
 			margin-bottom:0;
 			overflow:visible;
