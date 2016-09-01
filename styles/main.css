@@ -716,7 +716,7 @@ textarea {
 
 .page-textarea {
   width: 60%;
-  max-width: 600px; }
+  max-width: 650px; }
   .page-textarea .image, .page-textarea hr, .page-textarea blockquote {
     display: inline-block; }
   .page-textarea h1, .page-textarea h2, .page-textarea h3 {
@@ -822,6 +822,8 @@ textarea {
   text-align: left; }
   .linkgroup img {
     width: 40%; }
+  .linkgroup .page-textarea {
+    padding: 0 0 0 2.5em; }
 
 .linkgroup-list li {
   margin-bottom: 15px; }
