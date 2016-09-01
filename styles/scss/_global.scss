@@ -78,6 +78,39 @@ a.btn ,.btn{
 	}
 }
 
+.circle-container{
+	overflow:hidden;
+	position:relative;
+	height:100px;
+}
+
+.halfcircle{
+    position: absolute;
+    left: -10%;
+    right: 10%;
+    height:200px;
+    width:120%;
+
+    &.top{
+    	border-radius: 100% 100% 0 0;
+    	top:0
+    }
+
+    &.bottom{
+    	border-radius: 0 0 100% 100%;
+    	bottom: 0;
+    }
+}
+
+.border{
+	border:solid;
+	border-color: $grey;
+
+	&.top{
+		border-width: 1px 0 0 0;
+	}
+}
+
 //COLOR
 
 .blue{
@@ -102,6 +135,14 @@ a.btn ,.btn{
 
 .bg-white{
 	background:white;
+}
+
+.bg-ltblue{
+	background:$lg-lightblue;;
+}
+
+.bg-blue{
+	background:$lg-blue;
 }
 
 //FLOATS
