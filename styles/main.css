@@ -927,6 +927,10 @@ textarea {
     text-align: left; }
   .flex-item h2 {
     margin-bottom: .5em; }
+  .flex-item:empty {
+    height: 0;
+    border: none;
+    margin: 0; }
 
 .tier3-image {
   padding-top: 55%;
