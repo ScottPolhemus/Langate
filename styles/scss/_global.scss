@@ -139,12 +139,15 @@ a.btn ,.btn{
 	&:before{
 		content:'Read More';
 		position:absolute;
-		@include center;
+		top: 50%;
+    	transform: translateY(-50%) scale(1.1);
+
 		@include center-h;
 		z-index:1;
-		transform:scale(1.1);
+		// transform:scale(1.1);
 		width:200px;
 		text-align:center;
+		line-height:1;
 	}
 
 	&:after{
