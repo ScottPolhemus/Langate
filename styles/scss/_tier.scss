@@ -308,6 +308,7 @@
 	padding: 0;
 	margin: 0;
 	list-style: none;
+	clear:both;
 
 	display: -webkit-box;
 	display: -moz-box;
@@ -389,5 +390,32 @@
 
 	a{
 		color:$bluegrey;
+	}
+}
+
+.drop-down{
+	color:$lg-lightblue;
+	padding:0;
+	border:1px solid $grey;
+	display:inline-block;
+	position:relative;
+
+	select {
+		background: transparent;
+		width: 200px;
+		padding: .75em 1em;
+		font-size: 16px;
+		line-height: 1;
+		border: 0;
+		border-radius: 0;
+		-webkit-appearance: none;
+	}
+
+	&:after{
+		content:url(../images/down-arrow.svg);
+		position:absolute;
+		@include center;
+		width:10px;
+		right:15px;
 	}
 }
