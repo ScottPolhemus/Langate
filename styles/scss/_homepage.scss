@@ -257,10 +257,12 @@
 		padding:0;
 	}
 
-
-	.half{
+	.home-half{
 		width:45%;
 		max-width:425px;
+	}
+
+	.half{
 
 		img{
 			margin-bottom:25px;
@@ -284,10 +286,13 @@
 	}
 
 	@media screen and (max-width: $premobile) {
+		.half-home{
+			margin: 0 auto;
+		}
+		
 	    .half {
 	     	width:100%;
-	     	margin: 0 auto;
-	    }
+	     }	    
 
 	    .left, .right{
 	    	float:none;
