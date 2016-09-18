@@ -26,6 +26,10 @@
 
 .page-content{
 	padding: 4em 0;
+
+	@media screen and (max-width: $premobile) {
+		padding: 2.5em 0;
+	}
 }
 
 .page-textarea{
@@ -245,11 +249,20 @@
 		position:relative;
 
 		a{
-			transition:.35s ease;
+			transition: opacity .35s ease;
 
 			&:hover{
 				opacity:.5;
 			}
+		}
+	}
+
+	@media screen and (max-width: $premobile) {
+		padding-bottom: .75em;
+
+		&.left{
+			float:none;
+			text-align:center;
 		}
 	}
 }
@@ -274,6 +287,9 @@
 			}
 		}
 
+		@media screen and (max-width: $premobile) {
+			margin-bottom:1em;
+		}
 	}
 }
 
@@ -405,12 +421,11 @@
 	color:$lg-lightblue;
 	padding:0;
 	border:1px solid $grey;
-	display:inline-block;
 	position:relative;
+	width: 200px;
 
 	select {
 		background: transparent;
-		width: 200px;
 		padding: .75em 1em;
 		font-size: 16px;
 		line-height: 1;
@@ -426,4 +441,14 @@
 		width:10px;
 		right:15px;
 	}
+
+	@media screen and (max-width: $premobile) {
+		&.right{
+			float:none;
+			width:80%;
+			margin: 0 auto 2em;
+		}
+	}
 }
+
+
