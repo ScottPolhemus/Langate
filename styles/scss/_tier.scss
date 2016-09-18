@@ -345,6 +345,14 @@
 		border: none;
 		margin:0;
 	}
+
+	@media screen and (max-width: $tabportrait) {
+		width:48%;
+	}
+
+	@media screen and (max-width: $mobile) {
+		width:100%;
+	}
 }
 
 .tier3-image{

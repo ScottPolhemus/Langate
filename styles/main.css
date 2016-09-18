@@ -60,6 +60,9 @@ main {
   position: relative;
   height: 100%;
   padding-top: 75px; }
+  @media screen and (max-width: 865px) {
+    main {
+      padding-top: 70px; } }
 
 .padding {
   width: 93.5%; }
@@ -932,6 +935,12 @@ textarea {
     height: 0;
     border: none;
     margin: 0; }
+  @media screen and (max-width: 768px) {
+    .flex-item {
+      width: 48%; } }
+  @media screen and (max-width: 400px) {
+    .flex-item {
+      width: 100%; } }
 
 .tier3-image {
   padding-top: 55%;

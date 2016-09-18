@@ -8,6 +8,10 @@ main{
 	position: relative;
     height: 100%;
     padding-top:75px;
+
+    @media screen and (max-width: 865px) {
+		padding-top:70px;
+	}
 }
 
 .padding{
