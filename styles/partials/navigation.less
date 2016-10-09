@@ -1,0 +1,132 @@
+nav{
+	// border-bottom: 1px solid @grey;
+	box-shadow: 0 0 25px -4px rgba(0, 0, 0, 0.15);
+	text-align:center;
+	position:fixed;
+	top: 0;
+    left: 0;
+    right: 0;
+    z-index:100;
+    background:white;
+
+    .nav-wrapper{
+    	width:95%;
+    	height:100%;
+    	position:relative;
+    	margin:0 auto;
+    	display:inline-block;
+    }
+
+	.logo{
+		position:absolute;
+    	.center-el;
+
+		a, img{
+			display:block;
+		}
+	}
+
+	a{
+		transition:.35s ease;
+		display:inline-block;
+		padding:25px 0px;
+		position:relative;
+
+		&.blue{
+			&:after{
+				content: '';
+			    background: #1CA2DD;
+			    height: 4px;
+			    width: 4px;
+			    border-radius: 100%;
+			    position: absolute;
+			    left: 6px;
+	    		top: 51% !important;
+			    .center-el;
+			    opacity:0;
+			    transition:.35s ease;
+			    // transform:transformY(-50%) translateX(5px);
+			}
+
+			&:hover{
+				opacity:1;
+				color: @lg-lightblue;
+
+				&:after{
+					opacity:1;
+					// transform:translateX(0);
+				}
+			}
+
+			&.active{
+				&:after{
+					opacity:1;
+				}
+			}
+		}
+
+		&:hover{
+			opacity:.5;
+		}
+	}
+
+	.nav-links{
+
+		li{
+			display:inline-block;
+
+			a{
+				padding:25px 15px;
+			}
+
+			&.has-menu{
+				position:relative;
+
+				.dropdown{
+					position: absolute;
+				    background: white;
+				    // border: 1px @lg-lightblue solid;
+				    padding: 10px 20px 10px 10px;
+				    top: 55px;
+				    text-align:left;
+				    opacity:0;
+				    transform:translateY(-200px);
+				    transition: .5s ease;
+
+				    a{
+				    	display:block;
+				    	padding:5px 0;
+				    }
+				}
+
+				&:hover{
+					.dropdown{
+						opacity:1;
+				   		transform:translateY(0);
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 865px) {
+		height:70px;
+
+		.nav-links, .contact{
+			display:none;
+		}
+	}
+
+    @media screen and (max-width: 1080px) {
+	    .nav-links {
+	        float: right;
+    		margin-right: 90px;
+	    }
+	}
+
+	.contact{
+		position: absolute;
+		right:0;
+    	.center-el;
+	}
+}

@@ -6,32 +6,48 @@
 
     <!--Include sqs scripts, meta tags, and user content from the code injection tab.-->
     {squarespace-headers}
+    <!--
+
+    0000000     00000000000`
+      000         000     000`
+      000         000       00
+      000         000     000'
+      000         0000000000
+      000         000     000`
+      000         000       00
+      000         000     000'
+    000000000000000000000000'
+                 000
+          00     000
+         00'     00
+          00000000
+           '0000'
+
+        Built by Lucas J Ballasy
+        http://www.lucasballasy.com
+
+    -->
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 
-    <div class="container">
+    <main>
 
-      <header id="header" class="header">
+      <nav>
+        <div class="nav-wrapper">
         <!--Site title or logo.-->
         {.section website}
-
-          <h1 class="site-title" data-content-field="site-title">
+          <div class="logo">
             <a href="/">
               {.section logoImageUrl}
-               <img class="logo" src="{logoImageUrl}?format=original" alt="{siteTitle}" />
+                 <img class="logo" src="{logoImageUrl}?format=original" alt="{siteTitle}" />
               {.or}
                 {siteTitle}
               {.end}
+              <img src="{logoImageUrl}?format=original" alt="{siteTitle}">
             </a>
-          </h1>
-
-          <!--Site tagline.-->
-          {.section siteTagLine}
-            <p class="site-tagline">{@}</p>
-          {.end}
-
+          </div>
         {.end}
 
         <!--Main navigation.-->
-        <squarespace:navigation navigationId="mainNav" template="navigation" />
+        <squarespace:navigation navigationId="headerNav" template="navigation" />
       </header>

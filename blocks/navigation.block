@@ -1,24 +1,24 @@
-<nav id="main-navigation" class="main-navigation" data-content-field="navigation-mainNav">
-  <ul class="main-navigation-list">
+  <ul class="nav-links" data-content-field="navigation-mainNav">
     {.repeated section items}
 
         <li class="main-navigation-item {.section active} active-link{.end}{.if folderActive} active-folder{.end}">
 
+        <li class="{.section folder}has-menu{.end}">
+
           {.folder?}
 
             <!--FOLDER-->
+            <a class="p blue{.section folderActive} active{.end}" href="{collection.fullUrl}">{collection.navigationTitle}</a>
 
-              <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
-
-              <ul>
+              <ul class="dropdown">
 
                 {.repeated section items}
 
                   <!--COLLECTION IN A FOLDER-->
 
                   {.collection?}
-                    <li class="{.section active} active-link{.end}">
-                      <a href="{collection.fullUrl}">
+                    <li>
+                      <a class="p blue {.section active} active{.end}" href="{collection.fullUrl}">
                         {collection.navigationTitle}
                       </a>
                     </li>
@@ -27,8 +27,8 @@
                   <!--EXTERNAL LINK IN A FOLDER-->
 
                   {.section externalLink}
-                    <li class="main-navigation-dropdown">
-                      <a href="{url}"{.section newWindow} target="_blank"{.end}>
+                    <li>
+                      <a class="p blue" href="{url}"{.section newWindow} target="_blank"{.end}>
                         {title}
                       </a>
                     </li>
@@ -36,19 +36,19 @@
                 {.end}
 
               </ul>
-              
+
           {.or}
 
             <!--COLLECTION-->
 
             {.section collection}
-              <a href="{fullUrl}">{navigationTitle}</a>
+              <a class="p blue{.section active} active{.end}" href="{fullUrl}">{navigationTitle}</a>
             {.end}
 
             <!--EXTERNAL LINK-->
 
             {.section externalLink}
-              <a href="{url}"{.section newWindow} target="_blank"{.end}>
+              <a class="p blue{.section active} active{.end}" href="{url}"{.section newWindow} target="_blank"{.end}>
                 {title}
               </a>
             {.end}
@@ -56,7 +56,7 @@
           {.end}
 
         </li>
-        
+
     {.end}
   </ul>
 </nav>

@@ -1,4 +1,7 @@
 <!--Content injection point.-->
-<main id="content" class="content" role="main" data-content-field="main-content">
- {squarespace.main-content}
+<main id="content" class="content content-home" role="main" data-content-field="main-content">
+  {.section mainImage}
+    <img {@|image-meta} />
+  {.end}
+  {squarespace.main-content}
 </main>
