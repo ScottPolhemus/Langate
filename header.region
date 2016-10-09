@@ -24,7 +24,7 @@
               {.end}
             </a>
           </h1>
-          
+
           <!--Site tagline.-->
           {.section siteTagLine}
             <p class="site-tagline">{@}</p>
@@ -35,24 +35,3 @@
         <!--Main navigation.-->
         <squarespace:navigation navigationId="mainNav" template="navigation" />
       </header>
-
-      <!--Content injection point.-->
-      <main id="content" class="content" role="main" data-content-field="main-content">
-       {squarespace.main-content}
-      </main>
-
-      <!--Footer with open block field.-->
-      <footer id="footer" class="footer">
-        <squarespace:block-field id="footerBlocks" columns="12" />
-      </footer>
-
-    </div>
-
-    <!--Combo and minify the scripts when you're not logged in.-->
-    <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
-
-    <!--Injection point for tracking scripts and user content from the code injection tab.-->
-    {squarespace-footers}
-    
-  </body>
-</html> 
