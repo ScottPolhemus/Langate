@@ -43,7 +43,6 @@
               {.or}
                 {siteTitle}
               {.end}
-              <img src="{logoImageUrl}?format=original" alt="{siteTitle}">
             </a>
           </div>
         {.end}

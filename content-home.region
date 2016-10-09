@@ -1,7 +1,13 @@
 <!--Content injection point.-->
-<main id="content" class="content content-home" role="main" data-content-field="main-content">
-  {.section mainImage}
-    <img {@|image-meta} />
-  {.end}
-  {squarespace.main-content}
-</main>
+<header class="home-hero" style="background-image:url('{collection.mainImage.assetUrl}')" data-content-field="main-content">
+  <div class="home-title padding">
+    {squarespace.main-content}
+  </div>
+  <a href="#">
+    <span class="arrow">
+      <img class="arrow1" src="https://static1.squarespace.com/static/57702eee893fc0d33ce194e2/t/57f9b0cf2994cab2a8ebe8cd/1475981519297/arrow.png">
+      <img class="arrow2" src="https://static1.squarespace.com/static/57702eee893fc0d33ce194e2/t/57f9b0cf2994cab2a8ebe8cd/1475981519297/arrow.png">
+      <img class="arrow3" src="https://static1.squarespace.com/static/57702eee893fc0d33ce194e2/t/57f9b0cf2994cab2a8ebe8cd/1475981519297/arrow.png">
+    </span>
+  </a>
+</header>
