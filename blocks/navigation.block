@@ -1,7 +1,7 @@
   <ul class="nav-links" data-content-field="navigation-mainNav">
     {.repeated section items}
 
-        <li class="{.section folder}has-menu{.end}">
+        <li class="{.folder?}has-menu{.end}">
 
           {.folder?}
 
