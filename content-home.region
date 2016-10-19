@@ -29,3 +29,104 @@
   </div>
   <a class="btn h5 white" href="http://" target="">View All Services</a>
 </section>
+
+<section class="feature">
+  <h2 class="blue">Work Highlights</h2>
+  <div class="inner-content padding">
+    <div class="left half home-half">
+      <img class="logo" src="./images/logo1.png">
+      <h3 class="h4 blue">Improving Efficency in the Heathcare Industry</h3>
+      <p class="bluegrey">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit, sed do eiusmod tempor incididunt.</p>
+    </div>
+    <span class="line line-v line-grey"></span>
+    <div class="right half home-half">
+      <img class="logo" src="./images/logo2.png">
+      <h3 class="h4 blue">Improving Communication Through Internal Teams</h3>
+      <p class="bluegrey">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit, sed do eiusmod tempor incididunt.</p>
+    </div>
+  </div>
+  <a class="btn h5 blue" href="http://" target="">View All Services</a>
+</section>
+
+<section class="testimonial">
+<div class="circle-container">
+  <span class="halfcircle top bg-ltblue"></span>
+</div>
+
+<div class="container">
+  <div class="quote padding">
+    <img class="logomark" src="./images/logomark.png">
+    <p class="h2 white">“Placeholder Testimonial. Does your business need a custom solution to improve productivity? Langate created everything I hoped for and more!”</p>
+    <p class="white">Jane Doe, CEO of Approved Admissions</p>
+  </div>
+</div>
+
+<div class="circle-container bg-grey">
+  <span class="halfcircle bottom bg-ltblue"></span>
+</div>
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>
+<svg class="bottom" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 1440 75" enable-background="new 0 0 1440 75" xml:space="preserve">
+<path fill="#22A2DC" d="M1440,0H0v12.8C185.7,51.3,439.7,75,719.7,75c280.3,0,534.5-23.8,720.3-62.3V0z"/>
+</svg>-->
+</section>
+
+<section class="feature news bg-grey">
+  <h2>Happening at Langate</h2>
+  <div class="inner-content padding">
+
+    <a href="" class="box left">
+      <div class="news-image image h5 white" style="background-image:url('./images/news1.jpg')"></div>
+      <div class="text">
+        <p class="h5 bluegrey">June 29, 1990</p>
+        <p>Conquering IT in the service industry and in other industries</p>
+      </div>
+    </a>
+
+    <a href="" class="box center">
+      <div class="news-image image h5 white" style="background-image:url('./images/news2.jpg')"></div>
+      <div class="text">
+        <p class="h5 bluegrey">June 29, 1990</p>
+        <p>Conquering IT in the service industry</p>
+      </div>
+    </a>
+
+    <a href="" class="box right cta">
+      <span class="inner-cta">
+        <p class="h5 white">See All News</p>
+        <img src="./images/arrow-cta.png">
+      </span>
+    </a>
+  </div>
+</section>
+
+<section class="contact-form" style="background-image:url('./images/contact.jpg')">
+  <div class="contact-overlay padding">
+    <h2 class="blue">Ready to make a change? Send us a message.</h2>
+    <form class="p small" action="action_page.php">
+      <div class="input-group clear">
+        <div class="input-wrapper left">
+          <input type="text" name="firstname" placeholder="First Name">
+        </div>
+        <div class="input-wrapper right">
+          <input type="text" name="firstname" placeholder="Last Name">
+        </div>
+      </div>
+      <div class="input-group clear">
+        <div class="input-wrapper left">
+          <input type="text" name="firstname" placeholder="Email">
+        </div>
+        <div class="input-wrapper right">
+          <input type="text" name="firstname" placeholder="Phone Number">
+        </div>
+      </div>
+      <div class="input-group">
+        <textarea type="text" name="firstname" placeholder="Message" rows="5"></textarea>
+      </div>
+      <button class="btn h5 blue" type="submit">Send</button>
+      <p class="small blue">1-888-Langate &nbsp; | &nbsp; info@langate.com</p>
+    </form>
+  </div>
+</section>
