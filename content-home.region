@@ -13,23 +13,17 @@
 </header>
 
 <section class="feature services">
-  <h2 class="white">Our Services</h2>
+  <squarespace:block-field id="servicesHeading" columns="12" />
   <div class="inner-content padding">
     <div class="left half home-half">
       <squarespace:block-field id="servicesSection1" columns="12" />
-      <!--<img class="icon" src="./images/it-icon.png">
-      <h3 class="h4 white">Managed IT Services</h3>
-      <p class="bluegrey">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit, sed do eiusmod tempor incididunt.</p>-->
     </div>
     <span class="line line-v line-white"></span>
     <div class="right half home-half">
       <squarespace:block-field id="servicesSection2" columns="12" />
-      <!--<img class="icon" src="./images/dev-icon.png">
-      <h3 class="h4 white">Software Development</h3>
-      <p class="bluegrey">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit, sed do eiusmod tempor incididunt.</p>-->
     </div>
   </div>
-  <a class="btn h5 white" href="http://" target="">View All Services</a>
+  <squarespace:block-field id="servicesCta" columns="12" />
 </section>
 
 <section class="feature">
