@@ -1,0 +1,24 @@
+<!--Content injection point.-->
+<section class="hero" style="background-image:url('{collection.mainImage.assetUrl}')">
+  <div class="hero-title white padding center">
+    <h1>{collection.title}</h1>
+  </div>
+</section>
+<section class="page-content width center padding clear">
+  <div class="page-textarea center" data-content-field="main-content">
+    {squarespace.main-content}
+  </div>
+  <ul class="landing-row">
+    <li class="linkgroup feature padding width center border b-top">
+      <squarespace:query collection="it-services">
+        <h2>{collection.title}</h2>
+        <p></p>
+        <ul>
+          {.repeated section items}
+            <li><a href="{fullUrl}">{title}</a></li>
+          {.end}
+        </ul>
+      </squarespace:query>
+    </li>
+  </ul>
+</section>
