@@ -10,11 +10,13 @@
   </div>
   <ul class="landing-row">
     <li class="linkgroup feature padding width center border b-top">
+      <span id="it-services" class="anchor-link-target"></span>
       <squarespace:query collection="services/it-services">
         {@|apply services-list.block}
       </squarespace:query>
     </li>
     <li class="linkgroup feature padding width center border b-top">
+      <span id="software-development" class="anchor-link-target"></span>
       <squarespace:query collection="services/software-development">
         {@|apply services-list.block}
       </squarespace:query>
