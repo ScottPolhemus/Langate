@@ -1,1 +1,30 @@
-{body}
+{.section item}
+  <section class="hero" style="background-image:url('{collection.mainImage.assetUrl}')">
+    <div class="hero-title white padding center">
+      <h1>{title}</h1>
+    </div>
+  </section>
+  <section class="page-content width center padding clear">
+    <ul class="link-list breadcrumbs p small">
+      <li>
+        <a href="{collection.fullUrl}">{collection.title}</a>
+      </li>
+      <li>
+        <a href={fullUrl}>{title}</a>
+      </li>
+    </ul>
+    <div class="page-textarea left">
+      {body}
+    </div>
+    <aside class="page-sidebar right border b-left">
+      <h2 class="h4">Related Reading</h2>
+      <ul class="page-sidebar_related border b-bottom">
+      </ul>
+      <h2 class="h4">Related Projects</h2>
+      <ul class="page-sidebar_related clear border b-bottom">
+      </ul>
+      <div class="page-sidebar_cta">
+      </div>
+    </aside>
+  </section>
+{.end}
