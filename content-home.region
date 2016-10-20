@@ -14,7 +14,8 @@
 
 <section class="feature services">
   <h2 class="white">Our Services</h2>
-  <div class="inner-content padding">
+  <squarespace:block-field id="servicesSection" columns="2"/>
+  <!--<div class="inner-content padding">
     <div class="left half home-half">
       <img class="icon" src="./images/it-icon.png">
       <h3 class="h4 white">Managed IT Services</h3>
@@ -26,7 +27,7 @@
       <h3 class="h4 white">Software Development</h3>
       <p class="bluegrey">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit, sed do eiusmod tempor incididunt.</p>
     </div>
-  </div>
+  </div>-->
   <a class="btn h5 white" href="http://" target="">View All Services</a>
 </section>
 
