@@ -5,6 +5,24 @@
 </section>
 
 <section class="page-content width center padding clear">
+  <ul class="link-list category-filter h5 left">
+    {.section categoryFilter}
+      <li>
+        <a href={fullUrl}>All</a>
+      </li>
+    {.or}
+      <li class="active">
+        <a href={fullUrl}>All</a>
+      </li>
+    {.end}
+    {.section collection}
+      {.repeated section categories}
+      <li>
+        <a class="{.equal?:categoryFilter:@}active{.end}" href="{fullUrl}?category={@}">{@}</a>
+      </li>
+      {.end}
+    {.end}
+  </ul>
   <ul class="flex-container">
     {.repeated section items}
       <li class="flex-item" data-item-id="{id}">
