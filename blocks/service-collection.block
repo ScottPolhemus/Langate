@@ -1,5 +1,5 @@
 <img src="{collection.mainImage.assetUrl}" class="left" />
-<div class="page-textarea right">
+<div class="page-textarea right" data-collection-id="{collection.id}">
   <h2 class="h4">{collection.title}</h2>
   {collection.description}
   <ul class="linkgroup-list">
