@@ -26,7 +26,7 @@
   <squarespace:block-field id="servicesCta" columns="12" />
 </section>
 
-<section class="feature">
+<section class="feature work">
   <squarespace:block-field id="workHeading" columns="12" />
   <div class="inner-content padding">
     <squarespace:query collection="work" limit="2" featured="true">
@@ -61,7 +61,7 @@
 
 <div class="container">
   <div class="quote padding">
-    <img class="logomark" src="./images/logomark.png">
+    <img class="logomark" src="https://static1.squarespace.com/static/57702eee893fc0d33ce194e2/t/580939006b8f5bba8fbd88b6/1476999424542/logomark.png">
     <p class="h2 white">“Placeholder Testimonial. Does your business need a custom solution to improve productivity? Langate created everything I hoped for and more!”</p>
     <p class="white">Jane Doe, CEO of Approved Admissions</p>
   </div>
