@@ -9,10 +9,8 @@
     {squarespace.main-content}
   </div>
   <ul class="landing-row">
-    <li class="linkgroup feature padding width center border b-top">
-      <squarespace:query collection="services/it-services">
-        {@|apply service-collection.block}
-      </squarespace:query>
+    <li class="linkgroup feature padding width center border b-top" data-collection-id="{collection.id}">
+      {@|apply service-collection.block}
     </li>
   </ul>
 </section>

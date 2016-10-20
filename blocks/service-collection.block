@@ -1,6 +1,6 @@
 <img src="{collection.mainImage.assetUrl}" class="left" />
 <div class="page-textarea right">
-  <h2 class="h4" data-content-field="title">{collection.title}</h2>
+  <h2 class="h4">{collection.title}</h2>
   {collection.description}
   <ul class="linkgroup-list">
     {.repeated section items}
