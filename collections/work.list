@@ -1,13 +1,13 @@
-<section class="hero" style="background-image:url('{collection.mainImage.assetUrl}')">
+<section class="hero" style="background-image:url('{collection.mainImage.assetUrl}')" data-collection-id="{collection.id}">
   <div class="hero-title white padding center">
-    <h1>{collection.title}</h1>
+    <h1 data-content-field="title">{collection.title}</h1>
   </div>
 </section>
 
 <section class="page-content width center padding clear">
   <ul class="flex-container">
     {.repeated section items}
-      <li class="flex-item">
+      <li class="flex-item" data-item-id="{id}">
         <a href="{fullUrl}">
           <div class="tier3-image image h5 white" style="background-image:url('{mainImage.assetUrl}')"></div>
           <h2 class="h4">{title}</h2>

@@ -27,21 +27,31 @@
 </section>
 
 <section class="feature">
-  <h2 class="blue">Work Highlights</h2>
+  <squarespace:block-field id="workHeading" columns="12" />
   <div class="inner-content padding">
-    <div class="left half home-half">
-      <img class="logo" src="./images/logo1.png">
-      <h3 class="h4 blue">Improving Efficency in the Heathcare Industry</h3>
-      <p class="bluegrey">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit, sed do eiusmod tempor incididunt.</p>
-    </div>
-    <span class="line line-v line-grey"></span>
-    <div class="right half home-half">
-      <img class="logo" src="./images/logo2.png">
-      <h3 class="h4 blue">Improving Communication Through Internal Teams</h3>
-      <p class="bluegrey">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit, sed do eiusmod tempor incididunt.</p>
-    </div>
+    <squarespace:query collection="work" limit="2" featured="true">
+      {.section items.0}
+        <div class="left half home-half">
+          <a href="{fullUrl}">
+            <img class="logo" src="{customContent.logo.assetUrl}">
+            <h3 class="h4 blue">{title}</h3>
+          </a>
+          {excerpt}
+        </div>
+      {.end}
+      <span class="line line-v line-grey"></span>
+      {.section items.1}
+        <div class="right half home-half">
+          <a href="{fullUrl}">
+            <img class="logo" src="{customContent.logo.assetUrl}">
+            <h3 class="h4 blue">{title}</h3>
+          </a>
+          {excerpt}
+        </div>
+      {.end}
+    </squarespace:query>
   </div>
-  <a class="btn h5 blue" href="http://" target="">View All Services</a>
+  <squarespace:block-field id="workCta" columns="12" />
 </section>
 
 <section class="testimonial">
