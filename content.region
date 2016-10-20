@@ -1,11 +1,2 @@
 <!--Content injection point.-->
-<section class="hero" style="background-image:url('{collection.mainImage.assetUrl}')">
-  <div class="hero-title white padding center">
-    <h1>{collection.title}</h1>
-  </div>
-</section>
-<section class="page-content width center padding clear">
-  <div class="page-textarea center" data-content-field="main-content">
-    {squarespace.main-content}
-  </div>
-</section>
+{squarespace.main-content}
