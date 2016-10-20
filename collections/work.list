@@ -9,7 +9,7 @@
     {.repeated section items}
       <li class="flex-item" data-item-id="{id}">
         <a href="{fullUrl}">
-          <div class="tier3-image image h5 white" style="background-image:url('{mainImage.assetUrl}')"></div>
+          <div class="tier3-image image h5 white" style="background-image:url('{assetUrl}')"></div>
           <h2 class="h4">{title}</h2>
         </a>
         {excerpt}
