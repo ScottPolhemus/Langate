@@ -117,6 +117,13 @@ a.btn ,.btn{
     	border-radius: 0 0 100% 100%;
     	bottom: 0;
     }
+
+    @media screen and (max-width:$premobile){
+    	left: -20%;
+	    right: 20%;
+	    height: 165px;
+	    width: 140%;
+    }
 }
 
 .border{

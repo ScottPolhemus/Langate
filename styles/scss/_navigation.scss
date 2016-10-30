@@ -8,6 +8,8 @@ nav{
     right: 0;
     z-index:100;
     background:white;
+    font-size:0;
+    transition: box-shadow .35s ease;
 
     .nav-wrapper{
     	width:95%;
@@ -29,10 +31,9 @@ nav{
 	a{	
 		transition:.35s ease;
 		display:inline-block;
-		padding:25px 0px;
 		position:relative;
 
-		&.blue{
+		&.link{
 			&:after{
 				content: '';
 			    background: #1CA2DD;
@@ -85,13 +86,13 @@ nav{
 				.dropdown{
 					position: absolute;
 				    background: white;
-				    // border: 1px $lg-lightblue solid;
-				    padding: 10px 20px 10px 10px;
-				    top: 55px;
+				    padding: 5px 25px 10px 15px;
 				    text-align:left;
 				    opacity:0;
-				    transform:translateY(-200px);
 				    transition: .5s ease;
+				    pointer-events:none;
+				    border-top: 1px $lg-lightblue solid;
+					box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.15);
 
 				    a{
 				    	display:block;
@@ -102,7 +103,7 @@ nav{
 				&:hover{
 					.dropdown{
 						opacity:1;
-				   		transform:translateY(0);
+				   		pointer-events:auto;
 					}
 				}
 			}
