@@ -62,7 +62,9 @@ main {
   padding-top: 75px; }
   @media screen and (max-width: 865px) {
     main {
-      padding-top: 70px; } }
+      padding-top: 70px;
+      -webkit-transform: translateX(-250px);
+              transform: translateX(-250px); } }
 
 .padding {
   width: 90%; }
@@ -391,6 +393,82 @@ nav {
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%); }
+
+.menu-burger {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+  margin: 0 auto;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
+  .menu-burger .color {
+    background: #333; }
+  .menu-burger:hover .color {
+    background: grey; }
+  .menu-burger .cheeseburger {
+    width: 30px;
+    position: relative; }
+    .menu-burger .cheeseburger span {
+      height: 2px;
+      position: absolute;
+      -webkit-transition: .25s ease;
+              transition: .25s ease;
+      margin: 0 auto;
+      left: 0;
+      right: 0; }
+      .menu-burger .cheeseburger span.a {
+        top: 8px; }
+      .menu-burger .cheeseburger span.b {
+        top: 16px; }
+      .menu-burger .cheeseburger span.c {
+        top: 24px; }
+  .menu-burger:hover span.a {
+    top: 6px; }
+  .menu-burger:hover span.c {
+    top: 26px; }
+  .menu-burger.open span.a {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+    top: 16px; }
+  .menu-burger.open span.b {
+    opacity: 0; }
+  .menu-burger.open span.c {
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+    top: 16px; }
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  right: 0;
+  width: 250px;
+  top: 0;
+  bottom: 0;
+  padding: 15px 25px 0; }
+  @media screen and (max-width: 865px) {
+    .mobile-nav {
+      display: inline-block; } }
+
+.link {
+  padding: 10px 0;
+  display: block; }
+
+.dropdown {
+  display: block;
+  padding: 15px 10px; }
+
+.link.border, .dropdown.border {
+  border-color: rgba(191, 191, 191, 0.4); }
+
+.has-menu {
+  position: relative; }
+  .has-menu .link:after {
+    content: url(../images/down-arrow.svg);
+    position: absolute;
+    right: 0;
+    width: 10px; }
 
 .home-hero {
   background-position: center center;
