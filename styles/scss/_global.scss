@@ -8,10 +8,14 @@ main{
 	position: relative;
     height: 100%;
     padding-top:75px;
+    transition:.35s ease transform;
 
     @media screen and (max-width: 865px) {
 		padding-top:70px;
-		transform:translateX(-250px);
+
+		&.slide{
+			transform:translateX(-250px);
+		}
 	}
 }
 

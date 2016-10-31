@@ -224,6 +224,15 @@ nav{
 	@media screen and (max-width: 865px) {
 		display:inline-block;
 	}
+
+	.nav-links{
+		opacity:0;
+		transition:.6s ease;
+
+		&.open{
+			opacity:1;
+		}
+	}
 }
 
 .link{

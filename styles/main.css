@@ -59,12 +59,15 @@ html, body {
 main {
   position: relative;
   height: 100%;
-  padding-top: 75px; }
+  padding-top: 75px;
+  -webkit-transition: .35s ease -webkit-transform;
+          transition: .35s ease transform; }
   @media screen and (max-width: 865px) {
     main {
-      padding-top: 70px;
-      -webkit-transform: translateX(-250px);
-              transform: translateX(-250px); } }
+      padding-top: 70px; }
+      main.slide {
+        -webkit-transform: translateX(-250px);
+                transform: translateX(-250px); } }
 
 .padding {
   width: 90%; }
@@ -450,6 +453,12 @@ nav {
   @media screen and (max-width: 865px) {
     .mobile-nav {
       display: inline-block; } }
+  .mobile-nav .nav-links {
+    opacity: 0;
+    -webkit-transition: .6s ease;
+            transition: .6s ease; }
+    .mobile-nav .nav-links.open {
+      opacity: 1; }
 
 .link {
   padding: 10px 0;
