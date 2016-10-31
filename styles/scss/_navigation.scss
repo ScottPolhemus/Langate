@@ -28,6 +28,10 @@ nav{
 		a, img{
 			display:block;
 		}
+
+		img{
+			width:180px;
+		}
 	}
 
 	a{	
@@ -140,8 +144,12 @@ nav{
     right: 20px;
     bottom:0;
     margin: 0 auto;
-    // height: 44px;
     @include center;
+    display:none;
+
+    @media screen and (max-width: 865px) {
+    	display:block;
+    }
   
   .color{
     background:#333;
@@ -235,7 +243,7 @@ nav{
 	}
 }
 
-.link{
+.link-mobile{
     padding: 10px 0;
     display: block;
 
@@ -246,16 +254,16 @@ nav{
 	padding:15px 10px;
 }
 
-.link, .dropdown{
+.link-mobile, .dropdown{
 	&.border{
-    	border-color:rgba($grey,.4);
+    	border-color:rgba($grey,.25);
     }
 }
 
 .has-menu{
 	position:relative;
 
-	.link{
+	.link-mobile{
 		&:after{
 			content:url(../images/down-arrow.svg);
 			position:absolute;

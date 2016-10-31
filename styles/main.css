@@ -329,6 +329,8 @@ nav {
             transform: translateY(-50%); }
     nav .logo a, nav .logo img {
       display: block; }
+    nav .logo img {
+      width: 180px; }
   nav a {
     -webkit-transition: .35s ease;
             transition: .35s ease;
@@ -405,7 +407,11 @@ nav {
   margin: 0 auto;
   top: 50%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%); }
+          transform: translateY(-50%);
+  display: none; }
+  @media screen and (max-width: 865px) {
+    .menu-burger {
+      display: block; } }
   .menu-burger .color {
     background: #333; }
   .menu-burger:hover .color {
@@ -460,7 +466,7 @@ nav {
     .mobile-nav .nav-links.open {
       opacity: 1; }
 
-.link {
+.link-mobile {
   padding: 10px 0;
   display: block; }
 
@@ -468,12 +474,12 @@ nav {
   display: block;
   padding: 15px 10px; }
 
-.link.border, .dropdown.border {
-  border-color: rgba(191, 191, 191, 0.4); }
+.link-mobile.border, .dropdown.border {
+  border-color: rgba(191, 191, 191, 0.25); }
 
 .has-menu {
   position: relative; }
-  .has-menu .link:after {
+  .has-menu .link-mobile:after {
     content: url(../images/down-arrow.svg);
     position: absolute;
     right: 0;
