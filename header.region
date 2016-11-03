@@ -30,6 +30,12 @@
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 
+    <div class="mobile-nav">
+      <div class="nav-wrapper">
+        <squarespace:navigation navigationId="headerNav" template="navigation-mobile" />
+      </div>
+    </div>
+
     <main>
 
       <nav>
@@ -49,4 +55,4 @@
 
         <!--Main navigation.-->
         <squarespace:navigation navigationId="headerNav" template="navigation" />
-      </header>
+      </nav>

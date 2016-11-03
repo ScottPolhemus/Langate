@@ -252,14 +252,18 @@
 	position:relative;
 	// padding:25px 0;
 
-	@media screen and (max-width: @premobile) {
-		margin:9% auto;
-		padding:0;
-	}
-
 	.home-half{
 		width:45%;
 		max-width:425px;
+	}
+
+	@media screen and (max-width: @premobile) {
+		margin:9% auto;
+		padding:0;
+
+		.home-half{
+			margin:0 auto;
+		}
 	}
 
 	.half{
@@ -345,6 +349,10 @@
 	max-width:525px;
 	margin:0 auto;
 	text-align:center;
+
+	@media screen and (max-width:@premobile){
+		padding: 2em 1.5em;
+	}
 
 	form{
 		padding-top:25px;

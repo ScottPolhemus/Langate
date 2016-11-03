@@ -8,9 +8,14 @@ main{
 	position: relative;
     height: 100%;
     padding-top:75px;
+    transition:.35s ease transform;
 
     @media screen and (max-width: 865px) {
 		padding-top:70px;
+
+		&.slide{
+			transform:translateX(-250px);
+		}
 	}
 }
 
@@ -117,6 +122,13 @@ a.btn ,.btn{
     	border-radius: 0 0 100% 100%;
     	bottom: 0;
     }
+
+    @media screen and (max-width:@premobile){
+    	left: -20%;
+	    right: 20%;
+	    height: 165px;
+	    width: 140%;
+    }
 }
 
 .border{
@@ -137,7 +149,7 @@ a.btn ,.btn{
 }
 
 .image{
-	@include background;
+	.background;
 	position:relative;
 
 	&:before{
