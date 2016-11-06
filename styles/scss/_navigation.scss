@@ -219,26 +219,23 @@ nav{
 
 //MOBILE NAV
 
+
 .mobile-nav{
-	display: none;
+	display: inline-block;
     position: fixed;
     right: 0;
     width: 250px;
     top: 0;
     bottom: 0;
     padding: 15px 25px 0;
+    transform: translateX(101%);
+    transition:.35s ease;
+    opacity:0;
 
-	@media screen and (max-width: 865px) {
+	&.open{
 		display:inline-block;
-	}
-
-	.nav-wrapper{
-		opacity:0;
-		transition:.6s ease;
-
-		&.open{
-			opacity:1;
-		}
+		transform:translateX(0);
+		opacity:1;
 	}
 }
 

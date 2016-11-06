@@ -147,6 +147,9 @@ a.btn, .btn {
       right: 20%;
       height: 165px;
       width: 140%; } }
+  @media screen and (max-width: 400px) {
+    .halfcircle {
+      height: 125px; } }
 
 .border {
   border: solid;
@@ -455,22 +458,23 @@ nav {
     top: 16px; }
 
 .mobile-nav {
-  display: none;
+  display: inline-block;
   position: fixed;
   right: 0;
   width: 250px;
   top: 0;
   bottom: 0;
-  padding: 15px 25px 0; }
-  @media screen and (max-width: 865px) {
-    .mobile-nav {
-      display: inline-block; } }
-  .mobile-nav .nav-wrapper {
-    opacity: 0;
-    -webkit-transition: .6s ease;
-            transition: .6s ease; }
-    .mobile-nav .nav-wrapper.open {
-      opacity: 1; }
+  padding: 15px 25px 0;
+  -webkit-transform: translateX(101%);
+          transform: translateX(101%);
+  -webkit-transition: .35s ease;
+          transition: .35s ease;
+  opacity: 0; }
+  .mobile-nav.open {
+    display: inline-block;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1; }
 
 .accordion {
   width: 100%;

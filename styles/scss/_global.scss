@@ -135,6 +135,10 @@ a.btn ,.btn{
 	    height: 165px;
 	    width: 140%;
     }
+
+    @media screen and (max-width:$mobile){
+    	height:125px;
+    }
 }
 
 .border{
