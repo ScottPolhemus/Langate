@@ -231,6 +231,7 @@ nav{
     transform: translateX(101%);
     transition:.35s ease;
     opacity:0;
+    background-color:rgba($grey1,.5);
 
 	&.open{
 		display:inline-block;
@@ -274,8 +275,6 @@ nav{
 .accordion {
   width: 100%;
   max-width: 360px;
-  background: #FFF;
-  border-radius: 4px;
 
   .link {
 	  cursor: pointer;
@@ -310,7 +309,7 @@ nav{
 .accordion li .d-arrow {
     right: 12px;
     position: absolute;
-    width: 13px;
+    width: 10px;
     transition:.35s ease;
 
     @include center;

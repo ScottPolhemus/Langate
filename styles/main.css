@@ -469,7 +469,8 @@ nav {
           transform: translateX(101%);
   -webkit-transition: .35s ease;
           transition: .35s ease;
-  opacity: 0; }
+  opacity: 0;
+  background-color: rgba(235, 233, 233, 0.5); }
   .mobile-nav.open {
     display: inline-block;
     -webkit-transform: translateX(0);
@@ -478,9 +479,7 @@ nav {
 
 .accordion {
   width: 100%;
-  max-width: 360px;
-  background: #FFF;
-  border-radius: 4px; }
+  max-width: 360px; }
   .accordion .link {
     cursor: pointer;
     /*   display: block; */
@@ -510,7 +509,7 @@ nav {
 .accordion li .d-arrow {
   right: 12px;
   position: absolute;
-  width: 13px;
+  width: 10px;
   -webkit-transition: .35s ease;
           transition: .35s ease;
   top: 50%;
