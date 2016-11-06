@@ -54,10 +54,11 @@ footer{
 		// display:block;
     	display: block;
     	// height: 10px;
-    	margin: 10px 0;
+    	margin: 10px 0 0;
 
     	&.footer-title{
     		margin-bottom:15px;
+    		margin-top:0;
     		
     		a{
     			line-height:1.3;

@@ -1228,9 +1228,10 @@ footer {
     max-width: 50px; }
   .footer-col li {
     display: block;
-    margin: 10px 0; }
+    margin: 10px 0 0; }
     .footer-col li.footer-title {
-      margin-bottom: 15px; }
+      margin-bottom: 15px;
+      margin-top: 0; }
       .footer-col li.footer-title a {
         line-height: 1.3; }
     .footer-col li a {
