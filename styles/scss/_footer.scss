@@ -217,3 +217,17 @@ footer{
 	}
 }
 
+@media screen and (max-width:760px){
+	.sub-footer{
+		text-align:center;
+	}
+
+	.social, .footer-info{
+		position:relative;
+		top:auto;
+		transform:none;
+		display: block;
+		margin: 4.5% auto 0;
+	}
+}
+

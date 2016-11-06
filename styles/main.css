@@ -1347,4 +1347,15 @@ footer {
   .footer-info li {
     display: inline-block;
     margin-left: 10px; }
+
+@media screen and (max-width: 760px) {
+  .sub-footer {
+    text-align: center; }
+  .social, .footer-info {
+    position: relative;
+    top: auto;
+    -webkit-transform: none;
+            transform: none;
+    display: block;
+    margin: 4.5% auto 0; } }
 /*# sourceMappingURL=main.css.map */
