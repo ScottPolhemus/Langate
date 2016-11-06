@@ -41,7 +41,7 @@ $(document).ready(function(){
 
 	jQuery(function($) {
   
-	  var slideInterval = 2000,
+	  var slideInterval = 3000,
 	    fadeDuration = 600,
 	    $slideshow = $('.quote-container'),
 	    $slides = $slideshow.children();
@@ -50,12 +50,14 @@ $(document).ready(function(){
 	  
 	  setInterval(function() {
 	    $slides = $slideshow.children();
-	    $slides.eq(0).fadeOut(fadeDuration, function() {
+	    $slides.eq(0).fadeOut(fadeDuration, 
+
+	  function() {
 	      $(this).appendTo($slideshow);
 	    });
 	    $slides.eq(1).fadeIn(fadeDuration);
 	  }, slideInterval);
 	  
 	});
-	
+
 })
