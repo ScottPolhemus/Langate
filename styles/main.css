@@ -492,6 +492,13 @@ nav {
     font-size: 18px;
     -webkit-transition: all 0.4s ease;
             transition: all 0.4s ease; }
+  .accordion a {
+    display: inline-block;
+    -webkit-transition: .35s ease;
+            transition: .35s ease;
+    width: 100%; }
+    .accordion a:hover {
+      color: #1CA2DD; }
 
 .accordion li:last-child .link {
   border-bottom: 0; }
@@ -529,12 +536,6 @@ nav {
     text-decoration: none;
     padding: 5px;
     padding-left: 15px; }
-
-.accordion a {
-  -webkit-transition: .35s ease;
-          transition: .35s ease; }
-  .accordion a:hover {
-    color: #1CA2DD; }
 
 .home-hero {
   background-position: center center;

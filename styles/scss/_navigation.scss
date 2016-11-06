@@ -296,6 +296,16 @@ nav{
 	  font-size: 18px;
 	  transition: all 0.4s ease;
 	}
+
+	a{
+		display:inline-block;
+		transition: .35s ease;
+		width:100%;
+
+		&:hover {
+		  color: $lg-lightblue;
+		}
+	}
 }
 
 .accordion li:last-child .link { border-bottom: 0; }
@@ -333,13 +343,5 @@ nav{
 	  text-decoration: none;
 	  padding: 5px;
 	  padding-left: 15px;
-	}
-}
-
-.accordion a{
-	transition: .35s ease;
-
-	&:hover {
-	  color: $lg-lightblue;
 	}
 }
