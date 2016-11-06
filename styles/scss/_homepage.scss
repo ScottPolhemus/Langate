@@ -413,12 +413,11 @@ textarea{
 
 @keyframes quote{
 	0%, 100%{
-		transform:scale(1);
+		opacity:1;
 	}
 
 	50%{
-		transform:scale(.8);
-		opacity:.5;
+		opacity:.35;
 	}
 }
 

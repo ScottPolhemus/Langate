@@ -1,6 +1,18 @@
 footer{
 	background-color: $lg-blue;
-	padding:50px 0;
+	padding:50px 0 0;
+
+	a.p, a.lightblue{
+		transition:.35s ease;
+
+		&:hover{
+			opacity:.5;
+		}
+	}
+
+	.padding-95{
+		max-width:1440px;
+	}
 }
 
 .footer-col{
@@ -10,21 +22,39 @@ footer{
 	padding:0 20px;
 	font-size:0;
 
+	img{
+		width:100%;
+		max-width:50px;
+	}
+
 	li{
 		// display:block;
     	display: block;
     	// height: 10px;
 
+    	&.footer-title{
+    		margin-bottom:15px;
+    		
+    		a{
+    			line-height:1;
+    		}
+    	}
+
     	a{
 		    vertical-align: top;
 		    line-height:2;
+		    opacity:1;
     	}
 	}
 }
 
-.footer-title{
-	margin-bottom:10px;
-}
+// .footer-title{
+// 	margin-bottom:10px;
+
+// 	li a{
+// 		line-height:1;
+// 	}
+// }
 
 .flex{
 	display:flex;
@@ -41,7 +71,7 @@ footer{
 }
 
 .flex-justify-center{
-	justify-content:center;
+	justify-content:space-between;
 }
 
 .list--reset{
@@ -49,3 +79,109 @@ footer{
     padding: 0;
     margin-left: 0;
 }
+
+.sub-footer{
+	margin-top:50px;
+	// height:100px;
+	padding:20px 0;
+	position:relative;
+
+	// .width{
+	// 	position:relative;
+	// }
+}
+
+.newsletter, .newsletter p, .mail-form{
+	vertical-align:middle;
+	display:inline-block;
+}
+
+.mail-form{
+	position:relative;
+
+	input, textarea{
+		background-color:$lg-blue;
+	    width: 165px;
+	    padding: 5px 0;
+	    font-size:inherit;
+	    font-family:inherit;
+	    display:inline-block;
+	    border-width: 0 0 1px 0;
+	    border-color: rgba(white, .25);
+	    border-style: solid;
+	    transition: .35s ease;
+	    margin-left:10px;
+
+	    &:focus{
+	    	border-color: $lg-lightblue;
+	    	outline:none;
+	    	color:white;
+	    }
+
+	    ::placeholder{
+			opacity:50%;
+		}
+	}
+
+	button{
+		border:none;
+		position:absolute;
+		right:0;
+		z-index:100;
+		transition:.35s ease;
+		height: 20px;
+	    width: 20px;
+	    padding:0;
+	    text-align: right;
+	    background-color: $lg-blue;
+
+		@include center;
+
+		&:hover{
+			opacity:.5;
+		}
+	}
+}
+
+.social{
+	position:absolute;
+	overflow:auto;
+	height:36px;
+	width:35px;
+
+	@include center-h;
+	@include center;
+
+	a{
+		border:2px solid $lg-lightblue;
+		border-radius:35px;
+		display:inline-block;
+		padding:5px;
+		width:35px;
+		height:35px;
+		text-align:center;
+		transition:.35s ease;
+
+		img{
+			width:12px;
+			vertical-align:middle;
+		}
+
+		&:hover{
+			background-color: $lg-lightblue;
+		}
+	}
+}
+
+.footer-info{
+	position:absolute;
+	right:0;
+
+	@include center;
+
+	li{
+		display:inline-block;
+		margin-left:10px;
+	}
+}
+

@@ -14,7 +14,6 @@ nav{
     transition: box-shadow .35s ease;
 
     .nav-wrapper{
-    	width:95%;
     	height:100%;
     	position:relative;
     	margin:0 auto;
@@ -157,7 +156,7 @@ nav{
 
   &:hover{
     .color{
-      background:grey;
+      background:$grey;
     }
   }
   
@@ -243,34 +242,116 @@ nav{
 	}
 }
 
-.link-mobile{
-    padding: 10px 0;
-    display: block;
+// .link-mobile{
+//     padding: 10px 0;
+//     display: block;
 
+// }
+
+// .dropdown{
+// 	display:block;
+// 	padding:15px 10px;
+// }
+
+// .link-mobile, .dropdown{
+// 	&.border{
+//     	border-color:rgba($grey,.25);
+//     }
+// }
+
+// .has-menu{
+// 	position:relative;
+
+// 	.link-mobile{
+// 		&:after{
+// 			content:url(../images/down-arrow.svg);
+// 			position:absolute;
+// 			right:0;
+// 			width:10px;
+// 		}
+// 	}
+// }
+
+//MOBILE NAV CODEPEN
+
+.accordion {
+  width: 100%;
+  max-width: 360px;
+  background: #FFF;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 
-.dropdown{
-	display:block;
-	padding:15px 10px;
+.accordion .link {
+  cursor: pointer;
+/*   display: block; */
+  padding: 15px 0;
+  color: #4D4D4D;
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 1px solid #CCC;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
-.link-mobile, .dropdown{
-	&.border{
-    	border-color:rgba($grey,.25);
-    }
+.accordion li:last-child .link { border-bottom: 0; }
+
+.accordion li i {
+  position: absolute;
+  top: 16px;
+  left: 12px;
+  font-size: 18px;
+  color: #595959;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
-.has-menu{
-	position:relative;
-
-	.link-mobile{
-		&:after{
-			content:url(../images/down-arrow.svg);
-			position:absolute;
-			right:0;
-			width:10px;
-		}
-	}
+.accordion li i.fa-chevron-down {
+  right: 12px;
+  left: auto;
+  font-size: 16px;
 }
 
+.accordion li.open .link { color: #b63b4d; }
 
+.accordion li.open i { color: #b63b4d; }
+
+.accordion li.open i.fa-chevron-down {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+/**
+ * Submenu
+ -----------------------------*/
+
+
+.submenu {
+  display: none;
+  background: #444359;
+  font-size: 14px;
+}
+
+.submenu li { border-bottom: 1px solid #4b4a5e; }
+
+.submenu a {
+  display: block;
+  text-decoration: none;
+  color: #d9d9d9;
+  padding: 12px;
+  padding-left: 42px;
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.submenu a:hover {
+  background: #b63b4d;
+  color: #FFF;
+}

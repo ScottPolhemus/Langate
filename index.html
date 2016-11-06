@@ -68,7 +68,7 @@
 
 <body>
 
-  <div class="mobile-nav">
+<!--   <div class="mobile-nav">
     <div class="nav-wrapper">
       <ul class="nav-links">
         <li class="has-menu">
@@ -87,11 +87,44 @@
       </ul>
       <a class="p lightblue link-mobile" href="">Contact Us</a>
     </div>
+  </div> -->
+
+  <div class="mobile-nav">
+      <ul id="accordion" class="accordion">
+  <li>
+    <div class="link">Web Design<i class="fa fa-chevron-down"></i></div>
+    <ul class="submenu">
+      <li><a href="#">Photoshop</a></li>
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+    </ul>
+  </li>
+  <li>
+    <div class="link"><a href="">Coding</a></div>
+  </li>
+  <li>
+    <div class="link">Devices<i class="fa fa-chevron-down"></i></div>
+    <ul class="submenu">
+      <li><a href="#">Tablet</a></li>
+      <li><a href="#">Mobile</a></li>
+      <li><a href="#">Desktop</a></li>
+    </ul>
+  </li>
+  <li>
+    <div class="link">Global<i class="fa fa-chevron-down"></i></div>
+    <ul class="submenu">
+      <li><a href="#">Google</a></li>
+      <li><a href="#">Bing</a></li>
+      <li><a href="#">Yahoo</a></li>
+    </ul>
+  </li>
+</ul>
+
   </div>
 
 <main>
   <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper padding-95">
       <div class="logo">
         <a href="index.html"><img src="./images/logo.svg"></a>
       </div>
@@ -185,7 +218,7 @@
 
     <div class="container">
       <div class="quote padding">
-        <img class="logomark" src="./images/logomark.png">
+        <img class="logomark" src="./images/logomark.svg">
         <p class="h2 white">“Placeholder Testimonial. Does your business need a custom solution to improve productivity? Langate created everything I hoped for and more!”</p>
         <p class="white">Jane Doe, CEO of Approved Admissions</p>
       </div>
@@ -262,10 +295,10 @@
   </section>
 
   <footer>
-    <div class="padding center">
+    <div class="padding-95 center">
       <ul class="flex flex-wrap flex-items-start flex-justify-center">
         <li class="flex-item footer-col">
-          <img class="logomark" src="./images/logomark.png">
+          <img class="logomark" src="./images/logomark.svg">
         </li>
         <li class="flex-item footer-col">
           <ul>
@@ -319,6 +352,28 @@
           </ul>
         </li>
       </ul>
+    </div>
+
+    <div class="sub-footer border b-top b-white">
+      <div class="padding-95 center">
+        <div class="newsletter">
+          <p class="white">Join Our Newsletter</p>
+          <div class="mail-form p small grey">
+            <input type="text" name="firstname" placeholder="Email address">
+
+            <button type="submit"><img src="./images/l-arrow.svg"></button>
+        </div>
+
+        <div class="social">
+          <a href=""><img src="./images/linkedin.svg"></a>
+        </div>
+
+        <ul class="footer-info">
+          <li class="p small white">888-LANGATE</li>
+          <li class="p small white">© Langate Corp 2016</li>
+          <li class="p small white">Site by <a href="http://www.together-creative.co" class="lightblue" target="_blank">Together</a></li>
+        </ul>
+      </div>
     </div>
   </footer>
 

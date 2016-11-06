@@ -21,6 +21,12 @@ main{
 
 .padding{
 	width:90%;
+	position:relative;
+}
+
+.padding-95{
+	width:95%;
+	position:relative;
 }
 
 .width{
@@ -134,6 +140,10 @@ a.btn ,.btn{
 .border{
 	border:solid;
 	border-color: $grey;
+
+	&.b-white{
+		border-color:rgba(white, .25);
+	}
 
 	&.b-top{
 		border-width: 1px 0 0 0;
