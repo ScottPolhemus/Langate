@@ -1,9 +1,14 @@
 $(document).ready(function(){ 
+
+	//MOBILE BURGER MENU
+
 	$(".menu-burger").click(function(){
   		$(".menu-burger").toggleClass("open");
   		$("main").toggleClass("slide");
   		$(".mobile-nav").toggleClass("open");
 	});
+
+	//ACCORDION MOBILE
 
 	$(function() {
 	var Accordion = function(el, multiple) {
@@ -29,8 +34,28 @@ $(document).ready(function(){
 		};
 	}	
 
-	var accordion = new Accordion($('#accordion'), false);
-});
+		var accordion = new Accordion($('#accordion'), false);
+	});
 
+	//QUOTE SLIDESHOW
 
+	jQuery(function($) {
+  
+	  var slideInterval = 2000,
+	    fadeDuration = 600,
+	    $slideshow = $('.quote-container'),
+	    $slides = $slideshow.children();
+	  
+	  $slides.eq(0).fadeIn(fadeDuration);
+	  
+	  setInterval(function() {
+	    $slides = $slideshow.children();
+	    $slides.eq(0).fadeOut(fadeDuration, function() {
+	      $(this).appendTo($slideshow);
+	    });
+	    $slides.eq(1).fadeIn(fadeDuration);
+	  }, slideInterval);
+	  
+	});
+	
 })
