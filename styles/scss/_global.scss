@@ -8,15 +8,25 @@ main{
 	position: relative;
     height: 100%;
     padding-top:75px;
+    transition:.35s ease transform;
 
     @media screen and (max-width: 865px) {
 		padding-top:70px;
-		transform:translateX(-250px);
+
+		&.slide{
+			transform:translateX(-250px);
+		}
 	}
 }
 
 .padding{
 	width:90%;
+	position:relative;
+}
+
+.padding-95{
+	width:95%;
+	position:relative;
 }
 
 .width{
@@ -125,11 +135,19 @@ a.btn ,.btn{
 	    height: 165px;
 	    width: 140%;
     }
+
+    @media screen and (max-width:$mobile){
+    	height:125px;
+    }
 }
 
 .border{
 	border:solid;
 	border-color: $grey;
+
+	&.b-white{
+		border-color:rgba(white, .25);
+	}
 
 	&.b-top{
 		border-width: 1px 0 0 0;

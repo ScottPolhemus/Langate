@@ -313,9 +313,10 @@
 	// 	}
 	// }
 
-	.container{
+	.quote-container{
 		background:$lg-lightblue;
-		padding:25px 0;
+		position: relative;
+   		min-height: 300px;
 
 		@media screen and (max-width: $tabportrait) {
 			padding:40px 0;
@@ -325,6 +326,12 @@
 			max-width:765px;
 			margin:0 auto;
 			text-align:center;
+			position:absolute;
+			display:none;
+			transform: translateY(-15px);
+
+			@include center-h;
+			@include center;
 
 			.logomark{
 				max-width:45px;
@@ -413,12 +420,11 @@ textarea{
 
 @keyframes quote{
 	0%, 100%{
-		transform:scale(1);
+		opacity:1;
 	}
 
 	50%{
-		transform:scale(.8);
-		opacity:.5;
+		opacity:.35;
 	}
 }
 
