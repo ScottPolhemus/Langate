@@ -40,13 +40,13 @@
           <!--COLLECTION-->
 
           {.section collection}
-            <a class="p blue{.section active} active{.end}" href="{fullUrl}">{navigationTitle}</a>
+            <a class="p blue link{.section active} active{.end}" href="{fullUrl}">{navigationTitle}</a>
           {.end}
 
           <!--EXTERNAL LINK-->
 
           {.section externalLink}
-            <a class="p blue{.section active} active{.end}" href="{url}"{.section newWindow} target="_blank"{.end}>
+            <a class="p blue link{.section active} active{.end}" href="{url}"{.section newWindow} target="_blank"{.end}>
               {title}
             </a>
           {.end}

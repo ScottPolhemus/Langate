@@ -21,6 +21,12 @@ main{
 
 .padding{
 	width:90%;
+	position:relative;
+}
+
+.padding-95 {
+	width:95%;
+	position:relative;
 }
 
 .width{
@@ -129,11 +135,19 @@ a.btn ,.btn{
 	    height: 165px;
 	    width: 140%;
     }
+
+		@media screen and (max-width:@mobile){
+			height:125px;
+		}
 }
 
 .border{
 	border:solid;
 	border-color: @grey;
+
+	&.b-white {
+		border-color:fadeout(white, 75%);
+	}
 
 	&.b-top{
 		border-width: 1px 0 0 0;

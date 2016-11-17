@@ -39,7 +39,7 @@
     <main>
 
       <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper padding-95">
         <!--Site title or logo.-->
         {.section website}
           <div class="logo">

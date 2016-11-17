@@ -14,7 +14,6 @@ nav{
     transition: box-shadow .35s ease;
 
     .nav-wrapper{
-    	width:95%;
     	height:100%;
     	position:relative;
     	margin:0 auto;
@@ -23,7 +22,7 @@ nav{
 
 	.logo{
 		position:absolute;
-    	.center-el;
+		.center-el;
 
 		a, img{
 			display:block;
@@ -152,12 +151,12 @@ nav{
     }
 
   .color{
-    background:#333;
+    background:@lg-lightblue;
   }
 
   &:hover{
     .color{
-      background:grey;
+      background:@grey;
     }
   }
 
@@ -220,55 +219,125 @@ nav{
 
 //MOBILE NAV
 
+
 .mobile-nav{
-	display: none;
+	display: inline-block;
     position: fixed;
     right: 0;
     width: 250px;
     top: 0;
     bottom: 0;
     padding: 15px 25px 0;
+    transform: translateX(101%);
+    transition:.35s ease;
+    opacity:0;
+    background-color:fadeout(@grey1,50%);
 
-	@media screen and (max-width: 865px) {
+	&.open{
 		display:inline-block;
+		transform:translateX(0);
+		opacity:1;
+	}
+}
+
+// .link-mobile{
+//     padding: 10px 0;
+//     display: block;
+
+// }
+
+// .dropdown{
+// 	display:block;
+// 	padding:15px 10px;
+// }
+
+// .link-mobile, .dropdown{
+// 	&.border{
+//     	border-color:rgba($grey,.25);
+//     }
+// }
+
+// .has-menu{
+// 	position:relative;
+
+// 	.link-mobile{
+// 		&:after{
+// 			content:url(../images/down-arrow.svg);
+// 			position:absolute;
+// 			right:0;
+// 			width:10px;
+// 		}
+// 	}
+// }
+
+//MOBILE NAV CODEPEN
+
+.accordion {
+  width: 100%;
+  max-width: 360px;
+
+  .link {
+	  cursor: pointer;
+	/*   display: block; */
+	  padding: 15px 0;
+	  border-bottom: 1px solid fadeout(@grey,75%);
+	  position: relative;
+	  transition: all 0.4s ease;
 	}
 
-	.nav-links{
-		opacity:0;
-		transition:.6s ease;
+	li i {
+	  position: absolute;
+	  top: 16px;
+	  left: 12px;
+	  font-size: 18px;
+	  transition: all 0.4s ease;
+	}
 
-		&.open{
-			opacity:1;
+	a{
+		display:inline-block;
+		transition: .35s ease;
+		width:100%;
+
+		&:hover {
+		  color: @lg-lightblue;
 		}
 	}
 }
 
-.link-mobile{
-    padding: 10px 0;
-    display: block;
+.accordion li:last-child .link { border-bottom: 0; }
 
+.accordion li .d-arrow {
+    right: 12px;
+    position: absolute;
+    width: 10px;
+    transition:.35s ease;
+
+    .center-el;
 }
 
-.dropdown{
-	display:block;
-	padding:15px 10px;
+.accordion li.open .link { color: @lg-lightblue; }
+
+.accordion li.open i { color: @lg-lightblue; }
+
+.accordion li.open .d-arrow {
+  transform: rotate(180deg);
+  top:40%;
 }
 
-.link-mobile, .dropdown{
-	&.border{
-		border-color:fade(@grey,75%);
-	}
-}
+/**
+ * Submenu
+ -----------------------------*/
 
-.has-menu{
-	position:relative;
 
-	.link-mobile{
-		&:after{
-			content:url(../images/down-arrow.svg);
-			position:absolute;
-			right:0;
-			width:10px;
-		}
+.submenu {
+  display: none;
+  padding:15px 0;
+  border-bottom: 1px solid fadeout(@grey,75%);
+
+  a {
+	  display: block;
+	  text-decoration: none;
+	  padding: 5px;
+	  padding-left: 15px;
 	}
 }

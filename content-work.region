@@ -1,0 +1,67 @@
+<!--Content injection point.-->
+<section class="hero" style="background-image:url('{collection.mainImage.assetUrl}')">
+  <div class="hero-title white padding center">
+    <h1>{collection.title}</h1>
+  </div>
+</section>
+
+<section class="page-content width center padding clear">
+  <ul class="link-list category-filter h5 left">
+    <li class="active">
+      <a href={fullUrl}>All</a>
+    </li>
+    {.section collection}
+      {.repeated section categories}
+      <li>
+        <a class="{.equal?:categoryFilter:@}active{.end}" href="{fullUrl}?category={@}">{@}</a>
+      </li>
+      {.end}
+    {.end}
+  </ul>
+  <ul class="flex-container">
+    <squarespace:query collection="work/it-services">
+      {@|apply work-list.block}
+    </squarespace:query>
+    <squarespace:query collection="work/software-development">
+      {@|apply work-list.block}
+    </squarespace:query>
+    {.repeated section items}
+      <li class="flex-item" data-item-id="{id}">
+        <a href="{fullUrl}">
+          <div class="tier3-image image h5 white" style="background-image:url('{assetUrl}')"></div>
+          <h2 class="h4">{title}</h2>
+        </a>
+        {excerpt}
+        <span class="line line-h line-grey"></span>
+        <ul class="tags p small">
+          {.repeated section tags}
+            <li><a>{@}</a></li>
+          {.end}
+        </ul>
+      </li>
+      {postItemInjectCode}
+    {.end}
+    <li class="flex-item"></li>
+    <li class="flex-item"></li>
+  </ul>
+</section>
+
+<section class="page-content width center padding clear">
+  <div class="page-textarea center" data-content-field="main-content">
+    {squarespace.main-content}
+  </div>
+  <ul class="landing-row">
+    <li class="linkgroup feature padding width center border b-top">
+      <span id="it-services" class="anchor-link-target"></span>
+      <squarespace:query collection="services/it-services">
+        {@|apply services-list.block}
+      </squarespace:query>
+    </li>
+    <li class="linkgroup feature padding width center border b-top">
+      <span id="software-development" class="anchor-link-target"></span>
+      <squarespace:query collection="services/software-development">
+        {@|apply services-list.block}
+      </squarespace:query>
+    </li>
+  </ul>
+</section>

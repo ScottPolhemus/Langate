@@ -58,11 +58,10 @@
   <div class="circle-container">
     <span class="halfcircle top bg-ltblue"></span>
   </div>
-  <div class="container">
+  <div class="quote-container">
     <squarespace:query collection="testimonials" limit="1">
       {.section items.0}
       <div data-item-id="{id}" class="quote padding">
-        <img class="logomark" src="https://static1.squarespace.com/static/57702eee893fc0d33ce194e2/t/580939006b8f5bba8fbd88b6/1476999424542/logomark.png">
         {body}
       </div>
       {.end}
