@@ -10,12 +10,12 @@
         <div class="mail-form p small grey">
           <input type="text" name="firstname" placeholder="Email address">
 
-          <button type="submit"><img src="./images/l-arrow.svg"></button>
+          <button type="submit"><img src="/assets/l-arrow.svg"></button>
         </div>
       </div>
 
       <div class="social">
-        <a href=""><img src="./images/linkedin.svg"></a>
+        <a href=""><img src="/assets/linkedin.svg"></a>
       </div>
 
       <ul class="footer-info">

@@ -1,6 +1,6 @@
 <ul class="flex flex-wrap flex-items-start flex-justify-center">
   <li class="flex-item footer-col">
-    <img class="logomark" src="./images/logomark.svg">
+    <img class="logomark" src="/assets/logomark.svg">
   </li>
 
   {.repeated section items}

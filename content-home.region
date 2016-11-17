@@ -79,7 +79,7 @@
   <div class="inner-content padding">
 
     <a href="" class="box left">
-      <div class="news-image image h5 white" style="background-image:url('./images/news1.jpg')"></div>
+      <div class="news-image image h5 white" style="background-image:url('/assets/news1.jpg')"></div>
       <div class="text">
         <p class="h5 bluegrey">June 29, 1990</p>
         <p>Conquering IT in the service industry and in other industries</p>
@@ -87,7 +87,7 @@
     </a>
 
     <a href="" class="box center">
-      <div class="news-image image h5 white" style="background-image:url('./images/news2.jpg')"></div>
+      <div class="news-image image h5 white" style="background-image:url('/assets/news2.jpg')"></div>
       <div class="text">
         <p class="h5 bluegrey">June 29, 1990</p>
         <p>Conquering IT in the service industry</p>
@@ -97,13 +97,13 @@
     <a href="" class="box right cta">
       <span class="inner-cta">
         <p class="h5 white">See All News</p>
-        <img src="./images/arrow-cta.png">
+        <img src="/assets/arrow-cta.png">
       </span>
     </a>
   </div>
 </section>
 
-<section class="contact-form" style="background-image:url('./images/contact.jpg')">
+<section class="contact-form" style="background-image:url('/assets/contact.jpg')">
   <div class="contact-overlay padding">
     <h2 class="blue">Ready to make a change? Send us a message.</h2>
     <form class="p small" action="action_page.php">
