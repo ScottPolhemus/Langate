@@ -3,3 +3,9 @@
     <h1 data-content-field="title">{collection.title}</h1>
   </div>
 </section>
+<section class="page-content width center padding clear">
+  <div class="page-textarea center">
+    <squarespace:block-field id="servicesIntro" columns="12" />
+  </div>
+  <div data-services-list="services/it-services,services/software-development"></div>
+</section>
