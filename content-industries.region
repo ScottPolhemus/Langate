@@ -1,10 +1,27 @@
 {squarespace.main-content}
 <section class="page-content width center padding clear">
+  <div class="page-textarea center">
+    <squarespace:block-field id="industriesIntro" columns="12" />
+  </div>
   <ul class="flex-container">
     {.repeated section collection.collections}
-      <squarespace:query collection="{urlId}" limit="100">
-        {@|apply work-list.block}
-      </squarespace:query>
+      <li class="flex-item" data-item-id="{id}">
+        <a href="{fullUrl}">
+          <div class="tier3-image image h5 white" style="background-image:url('{assetUrl}')"></div>
+          <h2 class="h4">{title}</h2>
+        </a>
+        {excerpt}
+        <span class="line line-h line-grey"></span>
+        <ul class="tags p small">
+          {.repeated section categories}
+            <li><a>{@}</a></li>
+          {.end}
+          {.repeated section tags}
+            <li><a>{@}</a></li>
+          {.end}
+        </ul>
+      </li>
+      {postItemInjectCode}
     {.end}
     <li class="flex-item"></li>
     <li class="flex-item"></li>

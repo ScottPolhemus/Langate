@@ -56,6 +56,21 @@ export default class WorkList extends Component {
       </li>);
     }
 
+    const items = _.flatMap(this.state.data, (data, key) => {
+      return data.items;
+    });
+
+    const tags = _.flatMap(items, (item) => {
+      return item.tags;
+    });
+
+    for (let i = 0; i < tags.length; i++) {
+      const tag = tags[i];
+      filters.push(<li key={tag} className={this.state.filters.tags.indexOf(tag) !== -1 ? 'active' : ''}>
+        <a href={`#${tag}`}>{tag}</a>
+      </li>);
+    }
+
     return (<ul className="link-list category-filter h5 left">
       {filters}
     </ul>);

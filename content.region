@@ -1,2 +1,7 @@
+<section class="hero" style="background-image:url('{collection.mainImage.assetUrl}')">
+  <div class="hero-title white padding center">
+    <h1>{collection.title}</h1>
+  </div>
+</section>
 <!--Content injection point.-->
 {squarespace.main-content}
