@@ -1,25 +1,17 @@
 <!--Content injection point.-->
-<section class="hero" style="background-image:url('{collection.mainImage.assetUrl}')">
-  <div class="hero-title white padding center">
-    <h1>{collection.title}</h1>
-  </div>
-</section>
+{squarespace.main-content}
 <section class="page-content width center padding clear">
-  <div class="page-textarea center" data-content-field="main-content">
-    {squarespace.main-content}
+  <div class="page-textarea center">
+    <squarespace:block-field id="servicesIntro" columns="12" />
   </div>
   <ul class="landing-row">
-    <li class="linkgroup feature padding width center border b-top">
-      <span id="it-services" class="anchor-link-target"></span>
-      <squarespace:query collection="services/it-services">
-        {@|apply services-list.block}
-      </squarespace:query>
-    </li>
-    <li class="linkgroup feature padding width center border b-top">
-      <span id="software-development" class="anchor-link-target"></span>
-      <squarespace:query collection="services/software-development">
-        {@|apply services-list.block}
-      </squarespace:query>
-    </li>
+    {.repeated section collection.collections}
+      <li class="linkgroup feature padding width center border b-top">
+        <span id="{urlId}" class="anchor-link-target"></span>
+        <squarespace:query collection={urlId}>
+          {@|apply services-list.block}
+        </squarespace:query>
+      </li>
+    {.end}
   </ul>
 </section>
