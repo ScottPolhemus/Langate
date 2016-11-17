@@ -3,43 +3,9 @@
     <h1 data-content-field="title">{collection.title}</h1>
   </div>
 </section>
-
 <section class="page-content width center padding clear">
-  <ul class="link-list category-filter h5 left">
-    {.section categoryFilter}
-      <li>
-        <a href={fullUrl}>All</a>
-      </li>
-    {.or}
-      <li class="active">
-        <a href={fullUrl}>All</a>
-      </li>
-    {.end}
-    {.section collection}
-      {.repeated section categories}
-      <li>
-        <a class="{.equal?:categoryFilter:@}active{.end}" href="{fullUrl}?category={@}">{@}</a>
-      </li>
-      {.end}
-    {.end}
-  </ul>
   <ul class="flex-container">
-    {.repeated section items}
-      <li class="flex-item" data-item-id="{id}">
-        <a href="{fullUrl}">
-          <div class="tier3-image image h5 white" style="background-image:url('{assetUrl}')"></div>
-          <h2 class="h4">{title}</h2>
-        </a>
-        {excerpt}
-        <span class="line line-h line-grey"></span>
-        <ul class="tags p small">
-          {.repeated section tags}
-            <li><a>{@}</a></li>
-          {.end}
-        </ul>
-      </li>
-      {postItemInjectCode}
-    {.end}
+    {@|apply work-list.block}
     <li class="flex-item"></li>
     <li class="flex-item"></li>
   </ul>

@@ -8,7 +8,7 @@
     {.repeated section collection.collections}
       <li class="linkgroup feature padding width center border b-top">
         <span id="{urlId}" class="anchor-link-target"></span>
-        <squarespace:query collection={urlId}>
+        <squarespace:query collection="{urlId}" limit="100">
           {@|apply services-list.block}
         </squarespace:query>
       </li>
