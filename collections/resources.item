@@ -1,0 +1,12 @@
+{.section item}
+  <section class="hero" style="background-image:url('{collection.mainImage.assetUrl}')">
+    <div class="hero-title white padding center">
+      <h1>{title}</h1>
+    </div>
+  </section>
+  <section class="page-content width center padding clear">
+    <div class="page-textarea center">
+      {body}
+    </div>
+  </section>
+{.end}
