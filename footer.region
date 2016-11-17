@@ -48,7 +48,7 @@
 <script>
   window.Langate = window.Langate || {};
   window.Langate['services/it-services'] = <squarespace:query collection="services/it-services" limit="100">{@|json}</squarespace:query>;
-  window.Langate['services/software-development'] = <squarespace:query collection="services/it-services" limit="100">{@|json}</squarespace:query>;
+  window.Langate['services/software-development'] = <squarespace:query collection="services/software-development" limit="100">{@|json}</squarespace:query>;
 </script>
 
 </body>

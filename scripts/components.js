@@ -35983,7 +35983,11 @@ var WorkList = function (_Component) {
 
     _this.state = {
       data: {},
-      filters: {}
+      filters: {
+        collection: '',
+        category: '',
+        tag: ''
+      }
     };
     return _this;
   }
@@ -35993,13 +35997,20 @@ var WorkList = function (_Component) {
     value: function componentWillMount() {
       var data = {};
       var collections = this.props.collections.split(',');
+      var activeCollection = '';
 
       for (var i = 0; i < collections.length; i++) {
         data[collections[i]] = window.Langate[collections[i]];
+        if (window.location.pathname === '/' + collections[i] + '/') {
+          activeCollection = collections[i];
+        }
       }
 
       this.setState({
-        data: data
+        data: data,
+        filters: {
+          collection: activeCollection
+        }
       });
     }
   }, {
@@ -36010,7 +36021,7 @@ var WorkList = function (_Component) {
 
       filters.push(react.createElement(
         'li',
-        { key: 'all', className: 'active' },
+        { key: 'all', className: this.state.filters.collection === '' ? 'active' : '' },
         react.createElement(
           'a',
           { href: '/work' },
@@ -36026,7 +36037,7 @@ var WorkList = function (_Component) {
 
         filters.push(react.createElement(
           'li',
-          { key: collections[i] },
+          { key: collections[i], className: this.state.filters.collection === collections[i] ? 'active' : '' },
           react.createElement(
             'a',
             { href: fullUrl },
@@ -36035,17 +36046,90 @@ var WorkList = function (_Component) {
         ));
       }
 
-      return filters;
+      return react.createElement(
+        'ul',
+        { className: 'link-list category-filter h5 left' },
+        filters
+      );
+    }
+  }, {
+    key: 'renderCategoryFilters',
+    value: function renderCategoryFilters() {
+      var items = lodash.flatMap(this.state.data, function (data, key) {
+        return data.items;
+      });
+
+      var categories = lodash.flatMap(items, function (item) {
+        return item.categories;
+      });
+
+      return react.createElement(
+        'div',
+        { className: 'drop-down right' },
+        react.createElement(
+          'select',
+          { className: 'p' },
+          react.createElement(
+            'option',
+            { disabled: true, selected: true },
+            'Filter by Industry'
+          ),
+          lodash.map(categories, function (cat) {
+            return react.createElement(
+              'option',
+              { key: cat },
+              cat
+            );
+          })
+        )
+      );
+    }
+  }, {
+    key: 'renderTagFilters',
+    value: function renderTagFilters() {
+      var items = lodash.flatMap(this.state.data, function (data, key) {
+        return data.items;
+      });
+
+      var tags = lodash.flatMap(items, function (item) {
+        return item.tags;
+      });
+
+      return react.createElement(
+        'div',
+        { className: 'drop-down right' },
+        react.createElement(
+          'select',
+          { className: 'p' },
+          react.createElement(
+            'option',
+            { disabled: true, selected: true },
+            'Filter by Tag'
+          ),
+          lodash.map(tags, function (tag) {
+            return react.createElement(
+              'option',
+              { key: tag },
+              tag
+            );
+          })
+        )
+      );
     }
   }, {
     key: 'renderItems',
     value: function renderItems() {
-      console.log({ data: this.state.data });
-      var items = lodash.flatMap(this.state.data, function (val, key) {
-        return val.items;
-      });
+      var _this2 = this;
 
-      console.log({ items: items });
+      var items = lodash.flatMap(this.state.data, function (data, key) {
+        return data.items;
+      }).filter(function (item) {
+        if (_this2.state.filters.collection) {
+          return item.fullUrl.indexOf('/' + _this2.state.filters.collection) === 0;
+        }
+
+        return true;
+      });
 
       return items.map(function (item, key) {
         var id = item.id,
@@ -36110,11 +36194,9 @@ var WorkList = function (_Component) {
       return react.createElement(
         'div',
         null,
-        react.createElement(
-          'ul',
-          { className: 'link-list category-filter h5 left' },
-          this.renderCollectionFilters()
-        ),
+        this.renderCollectionFilters(),
+        this.renderCategoryFilters(),
+        this.renderTagFilters(),
         react.createElement(
           'ul',
           { className: 'flex-container' },
