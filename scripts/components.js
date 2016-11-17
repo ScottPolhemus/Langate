@@ -36432,6 +36432,92 @@ ServicesList.propTypes = {
   collections: PropTypes$2.string.isRequired
 };
 
+var Component$3 = react.Component;
+
+var HomeScroll = function (_Component) {
+  inherits(HomeScroll, _Component);
+
+  function HomeScroll(props) {
+    classCallCheck(this, HomeScroll);
+
+    var _this = possibleConstructorReturn(this, (HomeScroll.__proto__ || Object.getPrototypeOf(HomeScroll)).call(this, props));
+
+    _this.state = {
+      opacity: 1
+    };
+    return _this;
+  }
+
+  createClass(HomeScroll, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      window.addEventListener('scroll', this.onScroll.bind(this));
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.onScroll();
+    }
+  }, {
+    key: 'onScroll',
+    value: function onScroll() {
+      if (this._arrow) {
+        var distance = this._arrow.getBoundingClientRect().top;
+        var halfHeight = window.innerHeight / 2 + 140;
+
+        if (distance < halfHeight) {
+          if (distance < 0) {
+            this.setState({
+              opacity: 0
+            });
+          } else {
+            var ratio = distance / halfHeight;
+            this.setState({
+              opacity: ratio
+            });
+          }
+        } else {
+          this.setState({
+            opacity: 1
+          });
+        }
+      }
+    }
+  }, {
+    key: 'onClick',
+    value: function onClick(e) {
+      e.preventDefault();
+
+      $('html,body').animate({
+        scrollTop: $('.feature.services').offset().top - $('main > nav').outerHeight()
+      }, 1000);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return react.createElement(
+        'a',
+        { href: '#', onClick: this.onClick.bind(this) },
+        react.createElement(
+          'span',
+          { className: 'arrow', style: {
+              display: 'inline-block',
+              opacity: this.state.opacity
+            }, ref: function ref(_ref) {
+              _this2._arrow = _ref;
+            } },
+          react.createElement('img', { className: 'arrow1', src: 'https://static1.squarespace.com/static/57702eee893fc0d33ce194e2/t/57f9b0cf2994cab2a8ebe8cd/1475981519297/arrow.png' }),
+          react.createElement('img', { className: 'arrow2', src: 'https://static1.squarespace.com/static/57702eee893fc0d33ce194e2/t/57f9b0cf2994cab2a8ebe8cd/1475981519297/arrow.png' }),
+          react.createElement('img', { className: 'arrow3', src: 'https://static1.squarespace.com/static/57702eee893fc0d33ce194e2/t/57f9b0cf2994cab2a8ebe8cd/1475981519297/arrow.png' })
+        )
+      );
+    }
+  }]);
+  return HomeScroll;
+}(Component$3);
+
 $(function () {
   $('[data-footer-list]').each(function (index, el) {
     index$2.render(react.createElement(FooterList, { collection: el.getAttribute('data-footer-list') }), el);
@@ -36443,6 +36529,10 @@ $(function () {
 
   $('[data-services-list]').each(function (index, el) {
     index$2.render(react.createElement(ServicesList, { collections: el.getAttribute('data-services-list') }), el);
+  });
+
+  $('[data-home-scroll]').each(function (index, el) {
+    index$2.render(react.createElement(HomeScroll, null), el);
   });
 });
 

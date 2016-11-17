@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import FooterList from './footer-list';
 import WorkList from './work-list';
 import ServicesList from './services-list';
+import HomeScroll from './home-scroll';
 
 $(function() {
   $('[data-footer-list]').each(function(index, el) {
@@ -15,5 +16,9 @@ $(function() {
 
   $('[data-services-list]').each(function(index, el) {
     ReactDOM.render(<ServicesList collections={el.getAttribute('data-services-list')} />, el);
+  });
+
+  $('[data-home-scroll]').each(function(index, el) {
+    ReactDOM.render(<HomeScroll />, el);
   });
 });
