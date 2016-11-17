@@ -1,22 +1,8 @@
 {squarespace.main-content}
-<section class="page-content width center padding clear">
-  <ul class="link-list category-filter h5 left">
-    <li class="active">
-      <a href={fullUrl}>All</a>
-    </li>
-    {.repeated section collection.collections}
-      <li>
-        <a class="" href="{fullUrl}">{title}</a>
-      </li>
-    {.end}
-  </ul>
-  <ul class="flex-container">
-    {.repeated section collection.collections}
-      <squarespace:query collection="{urlId}" limit="100">
-        {@|apply work-list.block}
-      </squarespace:query>
-    {.end}
-    <li class="flex-item"></li>
-    <li class="flex-item"></li>
-  </ul>
+<section class="page-content width center padding clear" data-work-list="work/it-services,work/software-development">
 </section>
+<script>
+  window.Langate = window.Langate || {};
+  window.Langate['work/it-services'] = <squarespace:query collection="work/it-services" limit="100">{@|json}</squarespace:query>;
+  window.Langate['work/software-development'] = <squarespace:query collection="work/software-development" limit="100">{@|json}</squarespace:query>;
+</script>

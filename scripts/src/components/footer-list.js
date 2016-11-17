@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
 const {Component, PropTypes} = React;
 
-class FooterList extends Component {
+export default class FooterList extends Component {
   static propTypes = {
     collection: PropTypes.string.isRequired
   }
@@ -39,9 +37,3 @@ class FooterList extends Component {
     </ul>);
   }
 }
-
-$(function() {
-  $('[data-footer-list]').each(function(index, el) {
-    ReactDOM.render(<FooterList collection={el.getAttribute('data-footer-list')} />, el);
-  });
-});

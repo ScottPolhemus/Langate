@@ -5,7 +5,7 @@ import replace from 'rollup-plugin-replace'
 import resolve from 'rollup-plugin-node-resolve'
 
 export default {
-  entry: 'scripts/src/components.js',
+  entry: 'scripts/src/components/index.js',
   dest: 'scripts/components.js',
   format: 'iife',
   plugins: [
@@ -21,7 +21,8 @@ export default {
         'node_modules/fbjs/**',
         'node_modules/object-assign/**',
         'node_modules/react/**',
-        'node_modules/react-dom/**'
+        'node_modules/react-dom/**',
+        'node_modules/lodash/**'
       ]
     }),
     globals(),
