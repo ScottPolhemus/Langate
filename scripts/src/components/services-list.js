@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 const {Component, PropTypes} = React;
 
-export default class WorkList extends Component {
+export default class ServicesList extends Component {
   static propTypes = {
     collections: PropTypes.string.isRequired
   }
@@ -11,34 +11,20 @@ export default class WorkList extends Component {
     super(props);
 
     this.state = {
-      data: {},
-      filters: {
-        collection: '',
-        category: '',
-        tag: ''
-      }
+      data: {}
     };
   }
 
   componentWillMount() {
     const data = {};
     const collections = this.props.collections.split(',');
-    let activeCollection = '';
 
     for (let i = 0; i < collections.length; i++) {
       data[collections[i]] = window.Langate[collections[i]];
-      if (window.location.pathname === `/${collections[i]}/`) {
-        activeCollection = collections[i]
-      }
     }
 
     this.setState({
-      data,
-      filters: {
-        collection: activeCollection,
-        category: this.state.filters.category,
-        tag: this.state.filters.tag
-      }
+      data
     });
   }
 
@@ -78,25 +64,6 @@ export default class WorkList extends Component {
     </ul>);
   }
 
-  renderCategoryFilters() {
-    const items = _.flatMap(this.state.data, (data, key) => {
-      return data.items;
-    });
-
-    const categories = _.flatMap(items, (item) => {
-      return item.categories;
-    });
-
-    return (<div className="drop-down right">
-      <select className="p">
-        <option disabled selected>Filter by Industry</option>
-        {_.map(categories, (cat) => {
-          return <option key={cat}>{cat}</option>
-        })}
-      </select>
-    </div>);
-  }
-
   renderItems() {
     const items = _.flatMap(this.state.data, (data, key) => {
       return data.items;
@@ -133,15 +100,38 @@ export default class WorkList extends Component {
     });
   }
 
+  renderCollections() {
+    const collections = this.props.collections.split(',');
+    const collectionItems = [];
+
+    for (let i = 0; i < collections.length; i++) {
+      const coll = this.state.data[collections[i]];
+      const {collection, items} = coll;
+      collectionItems.push(<li className="linkgroup feature padding width center border b-top">
+        <span id={collection.urlId} className="anchor-link-target"></span>
+        <img src={collection.mainImage.assetUrl} className="left" />
+        <div className="page-textarea right" data-collection-id={collection.id}>
+          <h2 className="h4">{collection.title}</h2>
+          <div dangerouslySetInnerHTML={{
+            __html: collection.description 
+          }}></div>
+          <ul className="linkgroup-list">
+            {_.map(items, (item, key) => {
+              return (<li key={key}>
+                <a className="h5 lightblue" href={item.fullUrl}>{item.title}</a>
+              </li>);
+            })}
+          </ul>
+        </div>
+      </li>);
+    }
+
+    return collectionItems;
+  }
+
   render() {
-    return (<div>
-      {this.renderCollectionFilters()}
-      {this.renderCategoryFilters()}
-      <ul className="flex-container">
-        {this.renderItems()}
-        <li className="flex-item"></li>
-        <li className="flex-item"></li>
-      </ul>
-    </div>);
+    return (<ul className="landing-row">
+      {this.renderCollections()}
+    </ul>);
   }
 }

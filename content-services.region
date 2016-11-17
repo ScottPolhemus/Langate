@@ -4,14 +4,5 @@
   <div class="page-textarea center">
     <squarespace:block-field id="servicesIntro" columns="12" />
   </div>
-  <ul class="landing-row">
-    {.repeated section collection.collections}
-      <li class="linkgroup feature padding width center border b-top">
-        <span id="{urlId}" class="anchor-link-target"></span>
-        <squarespace:query collection="{urlId}" limit="100">
-          {@|apply services-list.block}
-        </squarespace:query>
-      </li>
-    {.end}
-  </ul>
+  <div data-services-list="services/it-services,services/software-development"></div>
 </section>
