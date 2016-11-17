@@ -1,0 +1,5 @@
+<section class="hero" style="background-image:url('{collection.mainImage.assetUrl}')" data-collection-id="{collection.id}">
+  <div class="hero-title white padding center">
+    <h1 data-content-field="title">{collection.title}</h1>
+  </div>
+</section>
