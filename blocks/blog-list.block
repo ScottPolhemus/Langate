@@ -1,0 +1,23 @@
+{.repeated section items}
+<li class="flex-item" data-item-id="{id}">
+  <article id="post-{id}" class="{@|item-classes}" data-item-id="{id}">
+    <a href="{fullUrl}">
+      <div class="tier3-image image h5 white" style="background-image:url('{assetUrl}')"></div>
+      <h2 class="h4">{title}</h2>
+    </a>
+    {.if excerpt}{excerpt}{.or}{body}{.end}
+    <span class="line line-h line-grey"></span>
+    <p class="small"><a href="{fullUrl}"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></a> by <a href="?author={author.id}">{author.displayName}</a></p>
+    <ul class="tags p small">
+      <li><a></a></li>
+      {.repeated section categories}
+      <li><a>{@}</a></li>
+      {.end}
+      {.repeated section tags}
+      <li><a>{@}</a></li>
+      {.end}
+    </ul>
+  </article>
+</li>
+{postItemInjectCode}
+{.end}
