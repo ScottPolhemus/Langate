@@ -6,5 +6,5 @@ export default function ContactScroll(el) {
     }
   }
 
-  $(window).on('scroll.contact', checkScroll);
+  $(window).on('scroll', checkScroll).scroll();
 }

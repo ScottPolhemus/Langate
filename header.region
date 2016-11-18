@@ -38,21 +38,22 @@
 
       <nav>
         <div class="nav-wrapper padding-95">
-        <!--Site title or logo.-->
-        {.section website}
-          <div class="logo">
-            <a href="/">
-              {.section logoImageUrl}
-                 <img class="logo" src="{logoImageUrl}?format=original" alt="{siteTitle}" />
-              {.or}
-                {siteTitle}
-              {.end}
-            </a>
-          </div>
-        {.end}
+          <!--Site title or logo.-->
+          {.section website}
+            <div class="logo">
+              <a href="/">
+                {.section logoImageUrl}
+                   <img class="logo" src="{logoImageUrl}?format=original" alt="{siteTitle}" />
+                {.or}
+                  {siteTitle}
+                {.end}
+              </a>
+            </div>
+          {.end}
 
-        <!--Main navigation.-->
-        <squarespace:navigation navigationId="headerNav" template="navigation" />
+          <!--Main navigation.-->
+          <squarespace:navigation navigationId="headerNav" template="navigation" />
+          <a class="contact p lightblue" href="/#contact">Contact Us</a>
         </div>
         <div class="menu-burger">
           <div class="cheeseburger">

@@ -108,7 +108,7 @@
   </div>
 </section>
 
-<section class="contact-form" style="background-image:url('https://static1.squarespace.com/static/57702eee893fc0d33ce194e2/t/582e4093725e25f108a8ec81/1479426224113/contact.jpg')" data-contact-scroll>
+<section id="contact" class="contact-form" style="background-image:url('https://static1.squarespace.com/static/57702eee893fc0d33ce194e2/t/582e4093725e25f108a8ec81/1479426224113/contact.jpg')" data-contact-scroll>
   <div class="contact-overlay padding">
     <h2 class="blue">Ready to make a change? Send us a message.</h2>
     <form class="p small" action="action_page.php">
