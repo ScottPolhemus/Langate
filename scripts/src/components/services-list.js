@@ -111,9 +111,9 @@ export default class ServicesList extends Component {
         <span id={collection.urlId} className="anchor-link-target"></span>
         <img src={collection.mainImage.assetUrl} className="left" />
         <div className="page-textarea right" data-collection-id={collection.id}>
-          <h2 className="h4">{collection.title}</h2>
+          <h2 className="h4">{collection.navigationTitle}</h2>
           <div dangerouslySetInnerHTML={{
-            __html: collection.description 
+            __html: collection.description
           }}></div>
           <ul className="linkgroup-list">
             {_.map(items, (item, key) => {
