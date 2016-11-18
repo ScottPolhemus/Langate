@@ -1,0 +1,6 @@
+{squarespace.main-content}
+<section class="page-content width center padding clear">
+  <div class="page-textarea center">
+    <squarespace:block-field id="careersIntro" columns="12" />
+  </div>
+</section>
