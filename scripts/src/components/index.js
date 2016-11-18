@@ -4,6 +4,7 @@ import FooterList from './footer-list';
 import WorkList from './work-list';
 import ServicesList from './services-list';
 import HomeScroll from './home-scroll';
+import ContactScroll from './contact-scroll';
 
 $(function() {
   $('[data-footer-list]').each(function(index, el) {
@@ -20,5 +21,9 @@ $(function() {
 
   $('[data-home-scroll]').each(function(index, el) {
     ReactDOM.render(<HomeScroll />, el);
+  });
+
+  $('[data-contact-scroll]').each(function(index, el) {
+    new ContactScroll(el);
   });
 });

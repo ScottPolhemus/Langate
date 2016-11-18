@@ -27,6 +27,7 @@
   "dependencies": {
     "lodash": "^4.17.2",
     "react": "15.3.0",
-    "react-dom": "15.3.0"
+    "react-dom": "15.3.0",
+    "scroll-in": "0.0.7"
   }
 }

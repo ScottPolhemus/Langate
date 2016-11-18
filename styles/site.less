@@ -91,3 +91,23 @@
     .h2;
   }
 }
+
+.contact-form {
+  perspective: 1000px;
+
+  &:not(.scrolled-in) {
+    .contact-overlay {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  &.scrolled-in {
+    .contact-overlay {
+      transform: none;
+      opacity: 1;
+      transition: 1000ms 250ms ease-out;
+      transition-property: transform, opacity;
+    }
+  }
+}

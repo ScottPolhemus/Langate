@@ -15,6 +15,10 @@ export default {
       presets: [ 'react', 'es2015-rollup'],
       plugins: [ 'transform-function-bind', 'transform-class-properties', 'external-helpers' ]
     }),
+    resolve({
+      browser: true,
+      main: true
+    }),
     cjs({
       exclude: 'node_modules/process-es6/**',
       include: [
@@ -26,10 +30,6 @@ export default {
       ]
     }),
     globals(),
-    replace({ 'process.env.NODE_ENV': JSON.stringify('development') }),
-    resolve({
-      browser: true,
-      main: true
-    })
+    replace({ 'process.env.NODE_ENV': JSON.stringify('development') })
   ]
 };
