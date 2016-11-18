@@ -7,7 +7,10 @@
   <section class="page-content width center padding clear">
     <ul class="link-list breadcrumbs p small">
       <li>
-        <a href="{collection.fullUrl}">{collection.title}</a>
+        <a href="/work">{collection.title}</a>
+      </li>
+      <li>
+        <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
       </li>
       <li>
         <a href={fullUrl}>{title}</a>
