@@ -7,6 +7,8 @@
 <section class="page-content width center padding clear">
   <ul class="flex-container">
     {@|apply blog-list.block}
+    <li class="flex-item"></li>
+    <li class="flex-item"></li>
   </ul>
 </section>
 

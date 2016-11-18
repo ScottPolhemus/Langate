@@ -31,7 +31,7 @@
 <section class="feature work">
   <squarespace:block-field id="workHeading" columns="12" />
   <div class="inner-content padding">
-    <squarespace:query collection="work" limit="2" featured="true">
+    <squarespace:query collection="work/it-services" limit="2" featured="true">
       {.section items.0}
         <div class="left half home-half">
           <a href="{fullUrl}">
@@ -78,23 +78,28 @@
   <h2>Happening at Langate</h2>
   <div class="inner-content padding">
 
-    <a href="" class="box left">
-      <div class="news-image image h5 white" style="background-image:url('/assets/news1.jpg')"></div>
-      <div class="text">
-        <p class="h5 bluegrey">June 29, 1990</p>
-        <p>Conquering IT in the service industry and in other industries</p>
-      </div>
-    </a>
+    <squarespace:query collection="company-news" limit="2">
+      {.section items.0}
+        <a href="{fullUrl}" class="box left">
+          <div class="news-image image h5 white" style="background-image:url('{assetUrl}')"></div>
+          <div class="text">
+            <p class="h5 bluegrey">{addedOn|date %B %d, %Y}</p>
+            <p>{title}</p>
+          </div>
+        </a>
+      {.end}
+      {.section items.1}
+        <a href="{fullUrl}" class="box center">
+          <div class="news-image image h5 white" style="background-image:url('{assetUrl}')"></div>
+          <div class="text">
+            <p class="h5 bluegrey">{addedOn|date %B %d, %Y}</p>
+            <p>{title}</p>
+          </div>
+        </a>
+      {.end}
+    </squarespace:query>
 
-    <a href="" class="box center">
-      <div class="news-image image h5 white" style="background-image:url('/assets/news2.jpg')"></div>
-      <div class="text">
-        <p class="h5 bluegrey">June 29, 1990</p>
-        <p>Conquering IT in the service industry</p>
-      </div>
-    </a>
-
-    <a href="" class="box right cta">
+    <a href="/company-news" class="box right cta">
       <span class="inner-cta">
         <p class="h5 white">See All News</p>
         <img src="/assets/arrow-cta.png">
