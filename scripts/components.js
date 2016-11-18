@@ -5,6 +5,9 @@ var global$1 = typeof global !== "undefined" ? global :
             typeof self !== "undefined" ? self :
             typeof window !== "undefined" ? window : {};
 
+// shim for using process in browser
+// based off https://github.com/defunctzombie/node-process/blob/master/browser.js
+
 function defaultSetTimout() {
     throw new Error('setTimeout has not been defined');
 }
@@ -225,6 +228,7 @@ var process = {
   uptime: uptime
 };
 
+/* eslint-disable no-unused-vars */
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 var propIsEnumerable = Object.prototype.propertyIsEnumerable;
 
@@ -317,6 +321,17 @@ var index = shouldUseNative() ? Object.assign : function (target, source) {
  *
  * @providesModule reactProdInvariant
  * 
+ */
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
  */
 
 function invariant$1(condition, format, a, b, c, d, e, f) {
@@ -464,6 +479,13 @@ var PooledClass_1 = PooledClass$1;
  * @providesModule ReactCurrentOwner
  */
 
+/**
+ * Keeps track of the current owner.
+ *
+ * The current owner is the component who should own any components that are
+ * currently being constructed.
+ */
+
 var ReactCurrentOwner$1 = {
 
   /**
@@ -475,6 +497,17 @@ var ReactCurrentOwner$1 = {
 };
 
 var ReactCurrentOwner_1 = ReactCurrentOwner$1;
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ */
 
 function makeEmptyFunction(arg) {
   return function () {
@@ -930,6 +963,8 @@ var ReactElement_1 = ReactElement$2;
  * 
  */
 
+/* global Symbol */
+
 var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
 var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
 
@@ -966,6 +1001,13 @@ var getIteratorFn_1 = getIteratorFn$1;
  *
  * @providesModule KeyEscapeUtils
  * 
+ */
+
+/**
+ * Escape and wrap key so it is safe to use as a reactid
+ *
+ * @param {string} key to be escaped.
+ * @return {string} the escaped key.
  */
 
 function escape(key) {
@@ -1622,6 +1664,26 @@ var ReactPropTypeLocationNames$1 = {};
 
 var ReactPropTypeLocationNames_1 = ReactPropTypeLocationNames$1;
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
+/**
+ * Allows extraction of a minified key. Let's the build system minify keys
+ * without losing the ability to dynamically use key strings as values
+ * themselves. Pass in an object with a single key/val pair and it will return
+ * you the string key of that single record. Suppose you want to grab the
+ * value for a key 'className' inside of an object. Key/val minification may
+ * have aliased that key to be 'xa12'. keyOf({className: null}) will return
+ * 'xa12' in that case. Resolve keys you want to use once at startup time, then
+ * reuse those resolutions.
+ */
 var keyOf$1 = function keyOf$1(oneKeyObj) {
   var key;
   for (key in oneKeyObj) {
@@ -4623,6 +4685,14 @@ var accumulateInto_1 = accumulateInto$2;
  * 
  */
 
+/**
+ * @param {array} arr an "accumulation" of items which is either an Array or
+ * a single item. Useful when paired with the `accumulate` module. This is a
+ * simple utility that allows us to reason about a collection of items, but
+ * handling the case when there is exactly one item (and we do not need to
+ * allocate an array).
+ */
+
 function forEachAccumulated$2(arr, cb, scope) {
   if (Array.isArray(arr)) {
     arr.forEach(cb, scope);
@@ -6184,6 +6254,17 @@ if (ExecutionEnvironment$6.canUseDOM) {
 
 var performance_1 = performance$2 || {};
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @typechecks
+ */
+
 var performance$1 = performance_1;
 
 var performanceNow$2;
@@ -7153,6 +7234,14 @@ var ReactUpdates_1 = ReactUpdates$2;
  * @providesModule getEventTarget
  */
 
+/**
+ * Gets the target node from a native browser event by accounting for
+ * inconsistencies in browser DOM APIs.
+ *
+ * @param {object} nativeEvent Native browser event.
+ * @return {DOMEventTarget} Target node.
+ */
+
 function getEventTarget$1(nativeEvent) {
   var target = nativeEvent.target || nativeEvent.srcElement || window;
 
@@ -7226,6 +7315,10 @@ var isEventSupported_1 = isEventSupported$1;
  *
  * @providesModule isTextInputElement
  * 
+ */
+
+/**
+ * @see http://www.whatwg.org/specs/web-apps/current-work/multipage/the-input-element.html#input-type-attr-summary
  */
 
 var supportedInputTypes = {
@@ -7674,6 +7767,11 @@ var ViewportMetrics_1 = ViewportMetrics$1;
  * @providesModule getEventModifierState
  */
 
+/**
+ * Translation from modifier key to the associated property in the event.
+ * @see http://www.w3.org/TR/DOM-Level-3-Events/#keys-Modifiers
+ */
+
 var modifierKeyToProp = {
   'Alt': 'altKey',
   'Control': 'ctrlKey',
@@ -8082,6 +8180,10 @@ var DOMNamespaces_1 = DOMNamespaces$1;
 
 /* globals MSApp */
 
+/**
+ * Create a function which has 'unsafe' privileges (required by windows8 apps)
+ */
+
 var createMicrosoftUnsafeLocalFunction$3 = function (func) {
   if (typeof MSApp !== 'undefined' && MSApp.execUnsafeLocalFunction) {
     return function (arg0, arg1, arg2, arg3) {
@@ -8216,6 +8318,12 @@ var setInnerHTML_1 = setInnerHTML$2;
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  * @providesModule escapeTextContentForBrowser
+ */
+
+// code copied and modified from escape-html
+/**
+ * Module variables.
+ * @private
  */
 
 var matchHtmlRegExp = /["'&<>]/;
@@ -8439,6 +8547,17 @@ DOMLazyTree$1.queueText = queueText;
 
 var DOMLazyTree_1 = DOMLazyTree$1;
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @typechecks
+ */
+
 var invariant$21 = invariant_1;
 
 /**
@@ -8553,6 +8672,18 @@ function createArrayFromMixed$1(obj) {
 
 var createArrayFromMixed_1 = createArrayFromMixed$1;
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
+/*eslint-disable fb-www/unsafe-html */
+
 var ExecutionEnvironment$12 = ExecutionEnvironment_1;
 
 var invariant$22 = invariant_1;
@@ -8633,6 +8764,19 @@ function getMarkupWrap$1(nodeName) {
 }
 
 var getMarkupWrap_1 = getMarkupWrap$1;
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @typechecks
+ */
+
+/*eslint-disable fb-www/unsafe-html*/
 
 var ExecutionEnvironment$11 = ExecutionEnvironment_1;
 
@@ -8998,6 +9142,10 @@ var ReactComponentBrowserEnvironment_1 = ReactComponentBrowserEnvironment$1;
  *
  */
 
+/**
+ * @param {DOMElement} node input/textarea to focus
+ */
+
 function focusNode$1(node) {
   // IE8 can throw "Can't move focus to the control because it is invisible,
   // not enabled, or of a type that does not accept the focus." for all kinds of
@@ -9030,6 +9178,10 @@ var AutoFocusUtils_1 = AutoFocusUtils$1;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule CSSProperty
+ */
+
+/**
+ * CSS properties which accept numbers but are not in units of "px".
  */
 
 var isUnitlessNumber = {
@@ -9164,6 +9316,17 @@ var CSSProperty$1 = {
 
 var CSSProperty_1 = CSSProperty$1;
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @typechecks
+ */
+
 var _hyphenPattern = /-(.)/g;
 
 /**
@@ -9277,6 +9440,17 @@ function dangerousStyleValue$1(name, value, component) {
 
 var dangerousStyleValue_1 = dangerousStyleValue$1;
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @typechecks
+ */
+
 var _uppercasePattern = /([A-Z])/g;
 
 /**
@@ -9333,6 +9507,10 @@ var hyphenateStyleName_1 = hyphenateStyleName$1;
  *
  * 
  * @typechecks static-only
+ */
+
+/**
+ * Memoizes the return value of a function that accepts one string argument.
  */
 
 function memoizeStringOnly$1(callback) {
@@ -11288,6 +11466,15 @@ var ReactComponentEnvironment_1 = ReactComponentEnvironment$1;
  * @providesModule ReactInstanceMap
  */
 
+/**
+ * `ReactInstanceMap` maintains a mapping from a public facing stateful
+ * instance (key) and the internal representation (value). This allows public
+ * methods to accept the user facing instance as an argument and map them back
+ * to internal methods.
+ */
+
+// TODO: Replace this with ES6: var ReactInstanceMap = new Map();
+
 var ReactInstanceMap$1 = {
 
   /**
@@ -11415,6 +11602,18 @@ var shallowEqual_1 = shallowEqual$2;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule shouldUpdateReactComponent
+ */
+
+/**
+ * Given a `prevElement` and `nextElement`, determines if the existing
+ * instance should be updated as opposed to being destroyed or replaced by a new
+ * instance. Both arguments are elements. This ensures that this logic can
+ * operate on stateless trees without any backing instance.
+ *
+ * @param {?object} prevElement
+ * @param {?object} nextElement
+ * @return {boolean} True if the existing instance should be updated.
+ * @protected
  */
 
 function shouldUpdateReactComponent$2(prevElement, nextElement) {
@@ -15388,6 +15587,24 @@ var ReactDefaultBatchingStrategy$1 = {
 
 var ReactDefaultBatchingStrategy_1 = ReactDefaultBatchingStrategy$1;
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @typechecks
+ */
+
 var emptyFunction$10 = emptyFunction_1;
 
 /**
@@ -15461,6 +15678,17 @@ var EventListener_1 = EventListener$1;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @typechecks
+ */
+
+/**
+ * Gets the scroll position of the supplied element or window.
+ *
+ * The return values are unbounded, unlike `getScrollPosition`. This means they
+ * may be negative or exceed the element boundaries (which is possible using
+ * inertial scrolling).
+ *
+ * @param {DOMWindow|DOMElement} scrollable
+ * @return {object} Map with `x` and `y` keys.
  */
 
 function getUnboundedScrollPosition$1(scrollable) {
@@ -15656,6 +15884,13 @@ var ReactInjection_1 = ReactInjection$1;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule getNodeForCharacterOffset
+ */
+
+/**
+ * Given any node return the first leaf node without children.
+ *
+ * @param {DOMElement|DOMTextNode} node
+ * @return {DOMElement|DOMTextNode}
  */
 
 function getLeafNode(node) {
@@ -15913,11 +16148,37 @@ var ReactDOMSelection$1 = {
 
 var ReactDOMSelection_1 = ReactDOMSelection$1;
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @typechecks
+ */
+
+/**
+ * @param {*} object The object to check.
+ * @return {boolean} Whether or not the object is a DOM node.
+ */
 function isNode$2(object) {
   return !!(object && (typeof Node === 'function' ? object instanceof Node : typeof object === 'object' && typeof object.nodeType === 'number' && typeof object.nodeName === 'string'));
 }
 
 var isNode_1 = isNode$2;
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @typechecks
+ */
 
 var isNode$1 = isNode_1;
 
@@ -15930,6 +16191,17 @@ function isTextNode$1(object) {
 }
 
 var isTextNode_1 = isTextNode$1;
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ */
 
 var isTextNode = isTextNode_1;
 
@@ -15958,6 +16230,26 @@ function containsNode$1(outerNode, innerNode) {
 
 var containsNode_1 = containsNode$1;
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @typechecks
+ */
+
+/* eslint-disable fb-www/typeof-undefined */
+
+/**
+ * Same as document.activeElement but wraps in a try-catch block. In IE it is
+ * not safe to call document.activeElement if there is nothing focused.
+ *
+ * The activeElement will be null only if the document or document body is not
+ * yet defined.
+ */
 function getActiveElement$1() /*?DOMElement*/{
   if (typeof document === 'undefined') {
     return null;
@@ -16820,6 +17112,17 @@ var SyntheticFocusEvent_1 = SyntheticFocusEvent$1;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule getEventCharCode
+ */
+
+/**
+ * `charCode` represents the actual "character code" and is safe to use with
+ * `String.fromCharCode`. As such, only keys that correspond to printable
+ * characters produce a valid `charCode`, the only exception to this is Enter.
+ * The Tab-key is considered non-printable and does not have a `charCode`,
+ * presumably because it does not produce a tab-character in browsers.
+ *
+ * @param {object} nativeEvent Native browser event.
+ * @return {number} Normalized `charCode` property.
  */
 
 function getEventCharCode$2(nativeEvent) {
