@@ -42,6 +42,18 @@ export default class WorkList extends Component {
     });
   }
 
+  onFilterCategory(event) {
+    const {collection, category, tag} = this.state.filters;
+
+    this.setState({
+      filters: {
+        collection,
+        category: event.target.value,
+        tag
+      }
+    });
+  }
+
   renderCollectionFilters() {
     const filters = [];
     const collections = this.props.collections.split(',');
@@ -68,9 +80,11 @@ export default class WorkList extends Component {
 
     for (let i = 0; i < tags.length; i++) {
       const tag = tags[i];
-      filters.push(<li key={tag} className={this.state.filters.tag.indexOf(tag) !== -1 ? 'active' : ''}>
-        <a href={`#${tag}`}>{tag}</a>
-      </li>);
+      if (tag) {
+        filters.push(<li key={tag} className={this.state.filters.tag.indexOf(tag) !== -1 ? 'active' : ''}>
+          <a href={`#${tag}`}>{tag}</a>
+        </li>);
+      }
     }
 
     return (<ul className="link-list category-filter h5 left">
@@ -88,10 +102,10 @@ export default class WorkList extends Component {
     });
 
     return (<div className="drop-down right">
-      <select className="p">
-        <option disabled selected>Filter by Industry</option>
+      <select className="p" name="category" onChange={::this.onFilterCategory}>
+        <option selected value="">Filter by Industry</option>
         {_.map(categories, (cat) => {
-          return <option key={cat}>{cat}</option>
+          return <option key={cat} value={cat}>{cat}</option>
         })}
       </select>
     </div>);
@@ -103,6 +117,12 @@ export default class WorkList extends Component {
     }).filter((item) => {
       if (this.state.filters.collection) {
         return (item.fullUrl.indexOf(`/${this.state.filters.collection}`) === 0);
+      }
+
+      return true;
+    }).filter((item) => {
+      if (this.state.filters.category) {
+        return (item.categories.indexOf(this.state.filters.category) !== -1);
       }
 
       return true;
