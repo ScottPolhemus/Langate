@@ -1,14 +1,14 @@
-<ul class="nav-links" data-content-field="navigation-mainNav">
+<ul id="accordion" class="accordion" data-content-field="navigation-mainNav">
   {.repeated section items}
 
-      <li class="{.folder?}has-menu{.end}">
+      <li>
 
         {.folder?}
 
           <!--FOLDER-->
-          <a class="p blue link-mobile border b-bottom{.section folderActive} active{.end}" href="{collection.fullUrl}">{collection.navigationTitle}</a>
+          <a class="p blue link{.section folderActive} active{.end}" href="{collection.fullUrl}">{collection.navigationTitle}<img src="/assets/down-arrow.svg" class="d-arrow"></a>
 
-            <ul class="dropdown">
+            <ul class="submenu">
 
               {.repeated section items}
 
@@ -40,13 +40,13 @@
           <!--COLLECTION-->
 
           {.section collection}
-            <a class="p blue link-mobile border b-bottom{.section active} active{.end}" href="{fullUrl}">{navigationTitle}</a>
+            <a class="p blue link{.section active} active{.end}" href="{fullUrl}">{navigationTitle}</a>
           {.end}
 
           <!--EXTERNAL LINK-->
 
           {.section externalLink}
-            <a class="p blue link-mobile border b-bottom{.section active} active{.end}" href="{url}"{.section newWindow} target="_blank"{.end}>
+            <a class="p blue link{.section active} active{.end}" href="{url}"{.section newWindow} target="_blank"{.end}>
               {title}
             </a>
           {.end}

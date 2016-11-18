@@ -31,9 +31,7 @@
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 
     <div class="mobile-nav">
-      <div class="nav-wrapper">
-        <squarespace:navigation navigationId="headerNav" template="navigation-mobile" />
-      </div>
+      <squarespace:navigation navigationId="headerNav" template="navigation-mobile" />
     </div>
 
     <main>
@@ -55,4 +53,12 @@
 
         <!--Main navigation.-->
         <squarespace:navigation navigationId="headerNav" template="navigation" />
+        </div>
+        <div class="menu-burger">
+          <div class="cheeseburger">
+            <span class="a color"></span>
+            <span class="b color"></span>
+            <span class="c color"></span>
+          </div>
+        </div>
       </nav>
