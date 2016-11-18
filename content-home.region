@@ -61,11 +61,11 @@
     <span class="halfcircle top bg-ltblue"></span>
   </div>
   <div class="quote-container">
-    <squarespace:query collection="testimonials" limit="1">
-      {.section items.0}
-      <div data-item-id="{id}" class="quote padding">
-        {body}
-      </div>
+    <squarespace:query collection="testimonials" limit="100">
+      {.repeated section items}
+        <div data-item-id="{id}" class="quote padding">
+          {body}
+        </div>
       {.end}
     </squarespace:query>
   </div>
