@@ -111,3 +111,18 @@
     }
   }
 }
+
+@premobileMin: @premobile + 1;
+
+@media screen and (min-width: @premobileMin) {
+  .work-list {
+    .drop-down {
+      width: 150px;
+      margin-bottom: 10px;
+
+      &:first-of-type {
+        margin-left: 10px;
+      }
+    }
+  }
+}

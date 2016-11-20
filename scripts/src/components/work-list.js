@@ -42,6 +42,20 @@ export default class WorkList extends Component {
     });
   }
 
+  onFilterCollection(event) {
+    event.preventDefault();
+
+    const {collection, category, tag} = this.state.filters;
+
+    this.setState({
+      filters: {
+        collection: event.target.getAttribute('data-value'),
+        category,
+        tag
+      }
+    });
+  }
+
   onFilterCategory(event) {
     const {collection, category, tag} = this.state.filters;
 
@@ -54,65 +68,20 @@ export default class WorkList extends Component {
     });
   }
 
-  renderCollectionFilters() {
-    const filters = [];
-    const collections = this.props.collections.split(',');
+  onFilterTag(event) {
+    const {collection, category, tag} = this.state.filters;
 
-    filters.push(<li key="all" className={this.state.filters.collection === '' ? 'active' : ''}>
-      <a href="/work">All</a>
-    </li>);
-
-    for (let i = 0; i < collections.length; i++) {
-      const data = this.state.data[collections[i]];
-      const {fullUrl, navigationTitle} = data.collection;
-      filters.push(<li key={collections[i]} className={this.state.filters.collection === collections[i] ? 'active' : ''}>
-        <a href={fullUrl}>{navigationTitle}</a>
-      </li>);
-    }
-
-    const items = _.flatMap(this.state.data, (data, key) => {
-      return data.items;
-    });
-
-    const tags = _.flatMap(items, (item) => {
-      return item.tags;
-    });
-
-    for (let i = 0; i < tags.length; i++) {
-      const tag = tags[i];
-      if (tag) {
-        filters.push(<li key={tag} className={this.state.filters.tag.indexOf(tag) !== -1 ? 'active' : ''}>
-          <a href={`#${tag}`}>{tag}</a>
-        </li>);
+    this.setState({
+      filters: {
+        collection,
+        category,
+        tag: event.target.value
       }
-    }
-
-    return (<ul className="link-list category-filter h5 left">
-      {filters}
-    </ul>);
+    });
   }
 
-  renderCategoryFilters() {
-    const items = _.flatMap(this.state.data, (data, key) => {
-      return data.items;
-    });
-
-    const categories = _.flatMap(items, (item) => {
-      return item.categories;
-    });
-
-    return (<div className="drop-down right">
-      <select className="p" name="category" onChange={::this.onFilterCategory}>
-        <option selected value="">Filter by Industry</option>
-        {_.map(categories, (cat) => {
-          return <option key={cat} value={cat}>{cat}</option>
-        })}
-      </select>
-    </div>);
-  }
-
-  renderItems() {
-    const items = _.flatMap(this.state.data, (data, key) => {
+  getFilteredItems() {
+    return _.flatMap(this.state.data, (data, key) => {
       return data.items;
     }).filter((item) => {
       if (this.state.filters.collection) {
@@ -122,11 +91,93 @@ export default class WorkList extends Component {
       return true;
     }).filter((item) => {
       if (this.state.filters.category) {
-        return (item.categories.indexOf(this.state.filters.category) !== -1);
+        if (item.categories) {
+          return (item.categories.indexOf(this.state.filters.category) !== -1);
+        }
+
+        return false;
+      }
+
+      return true;
+    }).filter((item) => {
+      if (this.state.filters.tag) {
+        if (item.tags) {
+          return (item.tags.indexOf(this.state.filters.tag) !== -1);
+        }
+
+        return false;
       }
 
       return true;
     });
+  }
+
+  renderCollectionFilters() {
+    const filters = [];
+    const collections = this.props.collections.split(',');
+
+    filters.push(<li key="all" className={this.state.filters.collection === '' ? 'active' : ''}>
+      <a href="/work" onClick={::this.onFilterCollection} data-value="">All</a>
+    </li>);
+
+    for (let i = 0; i < collections.length; i++) {
+      const data = this.state.data[collections[i]];
+      const {fullUrl, navigationTitle} = data.collection;
+      filters.push(<li key={collections[i]} className={this.state.filters.collection === collections[i] ? 'active' : ''}>
+        <a href={fullUrl} onClick={::this.onFilterCollection} data-value={collections[i]}>{navigationTitle}</a>
+      </li>);
+    }
+
+    return (<ul className="link-list category-filter h5 left">
+      {filters}
+    </ul>);
+  }
+
+  renderTagFilters() {
+    const filters = [];
+    const items = _.flatMap(this.state.data, (data, key) => {
+      return data.items;
+    });
+
+    const tags = _.flatMap(items, (item) => {
+      return item.tags;
+    }).filter((item) => {
+      return item;
+    });
+
+    return (<div className="drop-down right">
+      <select className="p" name="category" onChange={::this.onFilterTag} defaultValue="">
+        <option value="">Technology</option>
+        {_.map(tags, (tag, key) => {
+          return <option key={key} value={tag}>{tag}</option>
+        })}
+      </select>
+    </div>);
+  }
+
+  renderCategoryFilters() {
+    const items = _.flatMap(this.state.data, (data, key) => {
+      return data.items;
+    });
+
+    const categories = _.flatMap(items, (item) => {
+      return item.categories;
+    }).filter((cat) => {
+      return cat;
+    });
+
+    return (<div className="drop-down right">
+      <select className="p" name="category" onChange={::this.onFilterCategory} defaultValue="">
+        <option value="">Industry</option>
+        {_.map(categories, (cat, key) => {
+          return <option key={key} value={cat}>{cat}</option>
+        })}
+      </select>
+    </div>);
+  }
+
+  renderItems() {
+    const items = this.getFilteredItems();
 
     return items.map((item, key) => {
       const {id, fullUrl, assetUrl, title, excerpt, categories, tags} = item;
@@ -154,9 +205,10 @@ export default class WorkList extends Component {
   }
 
   render() {
-    return (<div>
+    return (<div className="work-list">
       {this.renderCollectionFilters()}
       {this.renderCategoryFilters()}
+      {this.renderTagFilters()}
       <ul className="flex-container">
         {this.renderItems()}
         <li className="flex-item"></li>

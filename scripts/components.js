@@ -36016,8 +36016,10 @@ var WorkList = function (_Component) {
       });
     }
   }, {
-    key: 'onFilterCategory',
-    value: function onFilterCategory(event) {
+    key: 'onFilterCollection',
+    value: function onFilterCollection(event) {
+      event.preventDefault();
+
       var _state$filters = this.state.filters,
           collection = _state$filters.collection,
           category = _state$filters.category,
@@ -36026,10 +36028,79 @@ var WorkList = function (_Component) {
 
       this.setState({
         filters: {
+          collection: event.target.getAttribute('data-value'),
+          category: category,
+          tag: tag
+        }
+      });
+    }
+  }, {
+    key: 'onFilterCategory',
+    value: function onFilterCategory(event) {
+      var _state$filters2 = this.state.filters,
+          collection = _state$filters2.collection,
+          category = _state$filters2.category,
+          tag = _state$filters2.tag;
+
+
+      this.setState({
+        filters: {
           collection: collection,
           category: event.target.value,
           tag: tag
         }
+      });
+    }
+  }, {
+    key: 'onFilterTag',
+    value: function onFilterTag(event) {
+      var _state$filters3 = this.state.filters,
+          collection = _state$filters3.collection,
+          category = _state$filters3.category,
+          tag = _state$filters3.tag;
+
+
+      this.setState({
+        filters: {
+          collection: collection,
+          category: category,
+          tag: event.target.value
+        }
+      });
+    }
+  }, {
+    key: 'getFilteredItems',
+    value: function getFilteredItems() {
+      var _this2 = this;
+
+      return lodash.flatMap(this.state.data, function (data, key) {
+        return data.items;
+      }).filter(function (item) {
+        if (_this2.state.filters.collection) {
+          return item.fullUrl.indexOf('/' + _this2.state.filters.collection) === 0;
+        }
+
+        return true;
+      }).filter(function (item) {
+        if (_this2.state.filters.category) {
+          if (item.categories) {
+            return item.categories.indexOf(_this2.state.filters.category) !== -1;
+          }
+
+          return false;
+        }
+
+        return true;
+      }).filter(function (item) {
+        if (_this2.state.filters.tag) {
+          if (item.tags) {
+            return item.tags.indexOf(_this2.state.filters.tag) !== -1;
+          }
+
+          return false;
+        }
+
+        return true;
       });
     }
   }, {
@@ -36043,7 +36114,7 @@ var WorkList = function (_Component) {
         { key: 'all', className: this.state.filters.collection === '' ? 'active' : '' },
         react.createElement(
           'a',
-          { href: '/work' },
+          { href: '/work', onClick: this.onFilterCollection.bind(this), 'data-value': '' },
           'All'
         )
       ));
@@ -36059,39 +36130,51 @@ var WorkList = function (_Component) {
           { key: collections[i], className: this.state.filters.collection === collections[i] ? 'active' : '' },
           react.createElement(
             'a',
-            { href: fullUrl },
+            { href: fullUrl, onClick: this.onFilterCollection.bind(this), 'data-value': collections[i] },
             navigationTitle
           )
         ));
-      }
-
-      var items = lodash.flatMap(this.state.data, function (data, key) {
-        return data.items;
-      });
-
-      var tags = lodash.flatMap(items, function (item) {
-        return item.tags;
-      });
-
-      for (var _i = 0; _i < tags.length; _i++) {
-        var tag = tags[_i];
-        if (tag) {
-          filters.push(react.createElement(
-            'li',
-            { key: tag, className: this.state.filters.tag.indexOf(tag) !== -1 ? 'active' : '' },
-            react.createElement(
-              'a',
-              { href: '#' + tag },
-              tag
-            )
-          ));
-        }
       }
 
       return react.createElement(
         'ul',
         { className: 'link-list category-filter h5 left' },
         filters
+      );
+    }
+  }, {
+    key: 'renderTagFilters',
+    value: function renderTagFilters() {
+      var filters = [];
+      var items = lodash.flatMap(this.state.data, function (data, key) {
+        return data.items;
+      });
+
+      var tags = lodash.flatMap(items, function (item) {
+        return item.tags;
+      }).filter(function (item) {
+        return item;
+      });
+
+      return react.createElement(
+        'div',
+        { className: 'drop-down right' },
+        react.createElement(
+          'select',
+          { className: 'p', name: 'category', onChange: this.onFilterTag.bind(this), defaultValue: '' },
+          react.createElement(
+            'option',
+            { value: '' },
+            'Technology'
+          ),
+          lodash.map(tags, function (tag, key) {
+            return react.createElement(
+              'option',
+              { key: key, value: tag },
+              tag
+            );
+          })
+        )
       );
     }
   }, {
@@ -36103,6 +36186,8 @@ var WorkList = function (_Component) {
 
       var categories = lodash.flatMap(items, function (item) {
         return item.categories;
+      }).filter(function (cat) {
+        return cat;
       });
 
       return react.createElement(
@@ -36110,16 +36195,16 @@ var WorkList = function (_Component) {
         { className: 'drop-down right' },
         react.createElement(
           'select',
-          { className: 'p', name: 'category', onChange: this.onFilterCategory.bind(this) },
+          { className: 'p', name: 'category', onChange: this.onFilterCategory.bind(this), defaultValue: '' },
           react.createElement(
             'option',
-            { selected: true, value: '' },
-            'Filter by Industry'
+            { value: '' },
+            'Industry'
           ),
-          lodash.map(categories, function (cat) {
+          lodash.map(categories, function (cat, key) {
             return react.createElement(
               'option',
-              { key: cat, value: cat },
+              { key: key, value: cat },
               cat
             );
           })
@@ -36129,23 +36214,7 @@ var WorkList = function (_Component) {
   }, {
     key: 'renderItems',
     value: function renderItems() {
-      var _this2 = this;
-
-      var items = lodash.flatMap(this.state.data, function (data, key) {
-        return data.items;
-      }).filter(function (item) {
-        if (_this2.state.filters.collection) {
-          return item.fullUrl.indexOf('/' + _this2.state.filters.collection) === 0;
-        }
-
-        return true;
-      }).filter(function (item) {
-        if (_this2.state.filters.category) {
-          return item.categories.indexOf(_this2.state.filters.category) !== -1;
-        }
-
-        return true;
-      });
+      var items = this.getFilteredItems();
 
       return items.map(function (item, key) {
         var id = item.id,
@@ -36209,9 +36278,10 @@ var WorkList = function (_Component) {
     value: function render() {
       return react.createElement(
         'div',
-        null,
+        { className: 'work-list' },
         this.renderCollectionFilters(),
         this.renderCategoryFilters(),
+        this.renderTagFilters(),
         react.createElement(
           'ul',
           { className: 'flex-container' },
